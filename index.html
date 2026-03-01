@@ -651,13 +651,13 @@
     /* TOC Navigation */
     .toc-nav {
       position: fixed;
-      right: 24px;
-      top: 50%;
+      left: 24px;
+      top: 40%;
       transform: translateY(-50%);
       z-index: 100;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
       max-height: 80vh;
       overflow-y: auto;
     }
@@ -666,10 +666,10 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 6px 12px 6px 8px;
+      padding: 8px 14px 8px 10px;
       text-decoration: none;
       color: var(--text-muted);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
       border-radius: 8px;
       transition: all 0.2s ease;
@@ -695,8 +695,8 @@
     .toc-nav a.active[data-phase="4"] { color: var(--rose); background: var(--rose-soft); border-left-color: var(--rose); }
 
     .toc-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--border);
       flex-shrink: 0;
@@ -704,8 +704,8 @@
     }
 
     .toc-nav a.active .toc-dot {
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
       background: currentColor;
     }
 
