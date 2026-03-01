@@ -9,7 +9,7 @@
   <meta property="og:description" content="코딩 제로에서 AI로 사업하기까지의 실전 로드맵">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pjm3863966.github.io/vibe-coding-guide/">
-  <meta property="og:image" content="https://pjm3863966.github.io/vibe-coding-guide/images/og-image.png">
+  <meta property="og:image" content="https://pjm3863966.github.io/vibe-coding-guide/images/cursor-landing.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="바이브 코딩 가이드">
   <meta name="twitter:description" content="코딩 제로에서 AI로 사업하기까지의 실전 로드맵">
@@ -362,6 +362,15 @@
 
     .prompt-header.good { color: var(--green); background: var(--green-soft); }
     .prompt-header.bad { color: var(--rose); background: var(--rose-soft); }
+
+    .prompt-box, .prompt-example {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
 
     .prompt-label {
       padding: 10px 18px;
@@ -1378,6 +1387,7 @@
                 </tr>
               </tbody>
             </table>
+            <p style="margin-top: 8px; font-size: 12px; color: var(--text-muted);">* 가격은 2025년 기준이며 변동될 수 있습니다.</p>
 
             <!-- 전환 타이밍 -->
             <h4 style="margin-top: 2rem; margin-bottom: 1rem;">언제 Claude Code로 전환하나요?</h4>
@@ -1844,7 +1854,7 @@
             포트폴리오 사이트 만들기 (첫 번째 프로젝트)
           </div>
           <div class="detail-body">
-            <p>자기소개 페이지를 만들어서 인터넷에 올려봅니다. <strong>가장 쉽고, 배포까지 경험</strong>할 수 있습니다.</p>
+            <p>위에서 Next.js가 어떤 구조인지 감을 잡았으니, 이제 <strong>직접 만들어볼 차례</strong>입니다. 자기소개 페이지를 만들어서 인터넷에 올려봅니다. <strong>가장 쉽고, 배포까지 경험</strong>할 수 있습니다.</p>
             <p>AI에게 이렇게 시키세요: "Next.js로 개인 포트폴리오 사이트 만들어줘. 자기소개, 프로젝트 목록, 연락처 섹션이 있으면 돼."</p>
           </div>
         </div>
@@ -1867,7 +1877,7 @@
           </div>
           <div class="detail-body">
             <p>사업자들이 매일 반복하는 작업 — 폼 응답 정리, 데이터 동기화, 리포트 생성 — 을 <strong>코드로 자동화</strong>해봅니다.</p>
-            <p>Make, Zapier 같은 노코드 도구는 월 2~5만원씩 내면서도 기능 제한이 많습니다. <strong>Claude Code로 직접 만들면 무료이고, 원하는 대로 커스텀</strong>할 수 있습니다.</p>
+            <p>Make, Zapier 같은 노코드 도구는 월 2~5만원씩 내면서도 기능 제한이 많습니다. <strong>Claude Code로 직접 만들면 별도 구독료 없이, 원하는 대로 커스텀</strong>할 수 있습니다.</p>
           </div>
         </div>
 
@@ -1878,7 +1888,7 @@
               <tr><th></th><th>Make (노코드)</th><th>Claude Code (직접)</th></tr>
             </thead>
             <tbody>
-              <tr><td>비용</td><td>월 $9~$29+</td><td><strong>무료</strong> (API 비용만)</td></tr>
+              <tr><td>비용</td><td>월 $9~$29+</td><td><strong>구독료 없음</strong> (Claude 요금만)</td></tr>
               <tr><td>실행 횟수</td><td>월 1,000~10,000회 제한</td><td><strong>무제한</strong></td></tr>
               <tr><td>커스텀</td><td>제공되는 모듈만 가능</td><td><strong>뭐든 가능</strong></td></tr>
               <tr><td>난이도</td><td>쉬움 (드래그&드롭)</td><td>AI가 대신 짜줌</td></tr>
@@ -1886,6 +1896,7 @@
             </tbody>
           </table>
           <p style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">Make를 쓸 줄 아는 건 좋지만, <strong style="color: var(--text);">원리를 이해하면 어떤 도구든</strong> 금방 배웁니다.</p>
+          <p style="margin-top: 4px; font-size: 12px; color: var(--text-muted);">* 가격은 2025년 기준이며 변동될 수 있습니다.</p>
         </div>
 
         <div class="card">
@@ -1964,6 +1975,19 @@
             <li>"이건 AI한테 시키고, 이건 직접 해야 한다"를 구분하는 감각</li>
           </ul>
         </div>
+
+        <!-- Phase 3 → 4 전환 체크리스트 -->
+        <div class="card" style="margin-top: 16px; border-left: 3px solid var(--rose);">
+          <h3>Phase 4로 넘어가도 되는 신호</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">아래 중 <strong style="color: var(--text);">3개 이상</strong>에 해당하면 Phase 4로 가세요:</p>
+          <ul style="line-height: 2;">
+            <li>포트폴리오든 CRUD든 <strong>하나를 완성해서 배포까지</strong> 해봤다</li>
+            <li>API 연동이 뭔지 감이 온다 (직접 안 짜도, AI에게 시킬 수 있다)</li>
+            <li>에러가 나면 당황하지 않고 <strong>AI에게 물어보는 루틴</strong>이 생겼다</li>
+            <li>"이런 서비스 만들고 싶다"는 <strong>구체적인 아이디어</strong>가 있다</li>
+            <li>Vercel 배포, 도메인 연결 같은 단어가 낯설지 않다</li>
+          </ul>
+        </div>
       </div>
 
       <!-- ============ Phase 4 ============ -->
@@ -2008,7 +2032,47 @@
 
         <div class="detail-section">
           <div class="detail-header">
-            <span class="detail-number" style="background: var(--rose-soft); color: var(--rose);">!</span>
+            <span class="detail-number" style="background: var(--rose-soft); color: var(--rose);">1</span>
+            서비스 배포하기 — Vercel
+          </div>
+          <div class="detail-body">
+            <p>만든 서비스를 인터넷에 올리는 가장 쉬운 방법입니다. <strong>GitHub에 코드 올리면 자동으로 배포됩니다.</strong></p>
+            <div class="learn-item">
+              <h4>Vercel이 뭔가요?</h4>
+              <p>Next.js를 만든 회사의 호스팅 서비스입니다. <a href="https://vercel.com" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">vercel.com</a>에서 GitHub 계정으로 로그인 → 프로젝트 선택 → 끝. <strong>개인 프로젝트는 무료입니다.</strong></p>
+            </div>
+            <div class="learn-item">
+              <h4>커스텀 도메인 연결</h4>
+              <p>기본 주소는 <code style="background: var(--border-light); padding: 2px 6px; border-radius: 4px; font-size: 13px;">프로젝트명.vercel.app</code>이지만, 연 1~2만원으로 <strong>나만의 도메인</strong>(예: myservice.com)을 연결할 수 있습니다. Vercel 대시보드에서 도메인만 입력하면 자동 설정됩니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number" style="background: var(--rose-soft); color: var(--rose);">2</span>
+            사용자 피드백 받기
+          </div>
+          <div class="detail-body">
+            <p>배포 후 가장 중요한 건 <strong>"사람들이 실제로 쓰는가?"</strong>입니다.</p>
+            <div class="learn-item">
+              <h4>간단한 방법들</h4>
+              <ul style="margin: 0; padding-left: 1.5rem; line-height: 2;">
+                <li><strong>Google Analytics</strong> — 방문자 수, 어디서 이탈하는지 무료로 확인</li>
+                <li><strong>Google Forms</strong> — 피드백 설문 링크를 서비스에 붙이기</li>
+                <li><strong>카카오톡 오픈채팅</strong> — 초기 사용자와 직접 소통</li>
+              </ul>
+            </div>
+            <div class="learn-item">
+              <h4>핵심 질문</h4>
+              <p>"이 서비스가 없으면 어떻게 하시겠어요?" — 대답이 <strong>"별로 상관없다"</strong>면 방향을 바꿔야 합니다. <strong>"너무 불편하다"</strong>면 제대로 가고 있는 겁니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number" style="background: var(--rose-soft); color: var(--rose);">3</span>
             사업 마인드셋 — Y Combinator 강의
           </div>
           <div class="detail-body">
@@ -2084,6 +2148,7 @@
 
   <!-- TOC Side Navigation -->
   <nav class="toc-nav" id="toc" aria-label="목차 네비게이션">
+    <a href="#hero"><span class="toc-dot"></span>맨 위로</a>
     <a href="#intro"><span class="toc-dot"></span>바이브 코딩이란</a>
     <a href="#overview"><span class="toc-dot"></span>전체 흐름</a>
     <a href="#ai-learning"><span class="toc-dot"></span>AI 학습법</a>
