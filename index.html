@@ -8,6 +8,13 @@
   <meta property="og:title" content="바이브 코딩 가이드">
   <meta property="og:description" content="코딩 제로에서 AI로 사업하기까지의 실전 로드맵">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pjm3863966.github.io/vibe-coding-guide/">
+  <meta property="og:image" content="https://pjm3863966.github.io/vibe-coding-guide/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="바이브 코딩 가이드">
+  <meta name="twitter:description" content="코딩 제로에서 AI로 사업하기까지의 실전 로드맵">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <link rel="canonical" href="https://pjm3863966.github.io/vibe-coding-guide/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,7 +28,7 @@
       --border: #e5e5e5;
       --border-light: #f0f0f0;
       --text: #171717;
-      --text-muted: #737373;
+      --text-muted: #525252;
       --accent: #4f46e5;
       --accent-soft: rgba(79, 70, 229, 0.08);
       --green: #16a34a;
@@ -43,6 +50,20 @@
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--accent);
+      color: white;
+      padding: 8px 16px;
+      z-index: 999;
+      font-size: 14px;
+      text-decoration: none;
+      border-radius: 0 0 8px 0;
+    }
+    .skip-link:focus { top: 0; }
 
     .container {
       max-width: 720px;
@@ -341,6 +362,24 @@
 
     .prompt-header.good { color: var(--green); background: var(--green-soft); }
     .prompt-header.bad { color: var(--rose); background: var(--rose-soft); }
+
+    .prompt-label {
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .prompt-content {
+      padding: 16px 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
 
     .prompt-body {
       padding: 16px 18px;
@@ -717,10 +756,11 @@
 </head>
 <body>
 
-  <div class="container">
+  <a href="#intro" class="skip-link">본문으로 건너뛰기</a>
+  <main class="container">
 
     <!-- Hero -->
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="hero-badge">2026 Edition</div>
       <h1>코딩 제로에서<br><span>바이브 코딩</span>으로<br>사업하기</h1>
       <p>AI에게 말로 설명하면 코드가 만들어지는 시대.<br>코딩 입문자를 위한 실전 로드맵.</p>
@@ -732,6 +772,125 @@
       <p>바이브 코딩(Vibe Coding)은 <strong>AI에게 자연어로 설명하면 코드를 만들어주는 방식</strong>입니다. 직접 코드를 한 줄 한 줄 치는 게 아니라, "로그인 페이지 만들어줘"처럼 말하면 AI가 코드를 생성합니다.</p>
       <p>하지만 <strong>"코딩을 전혀 몰라도 된다"는 건 반쯤만 맞습니다.</strong> AI가 만든 결과물을 확인하고, 문제가 생겼을 때 어디가 잘못됐는지 파악하려면 기초 지식이 필요합니다.</p>
       <p>이 가이드는 <strong>코딩 경험 0%</strong>인 사람이 AI 도구를 활용해 실제 서비스를 만들고 사업할 수 있게 되기까지의 현실적인 로드맵입니다.</p>
+    </section>
+
+    <!-- 전체 학습 흐름 다이어그램 — intro 바로 뒤 -->
+    <section id="overview" style="margin-bottom: 48px;">
+      <h2 style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px;">전체 학습 흐름</h2>
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 24px;">4단계를 순서대로 따라가면 됩니다. 각 단계는 이전 단계 위에 쌓입니다.</p>
+
+      <!-- 다이어그램 -->
+      <div style="
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 2rem 1.5rem;
+        box-shadow: var(--shadow);
+      ">
+        <!-- Phase 흐름도 -->
+        <div style="display: flex; flex-direction: column; gap: 0; position: relative;">
+
+          <!-- Phase 1 -->
+          <div style="display: flex; align-items: flex-start; gap: 1rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-soft); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: var(--accent);">1</div>
+              <div style="width: 2px; height: 40px; background: linear-gradient(var(--accent), var(--green));"></div>
+            </div>
+            <div style="padding-top: 8px;">
+              <div style="font-weight: 700; font-size: 17px; color: var(--accent); margin-bottom: 4px;">기초 체력 기르기 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">2~4주</span></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">HTML</span>
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">CSS</span>
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">JavaScript</span>
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">데이터베이스</span>
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Git</span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">생활코딩으로 웹의 기본 원리를 이해합니다</p>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div style="display: flex; align-items: flex-start; gap: 1rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--green-soft); border: 2px solid var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: var(--green);">2</div>
+              <div style="width: 2px; height: 40px; background: linear-gradient(var(--green), var(--amber));"></div>
+            </div>
+            <div style="padding-top: 8px;">
+              <div style="font-weight: 700; font-size: 17px; color: var(--green); margin-bottom: 4px;">AI 도구 숙달 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">2~3주</span></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Cursor</span>
+                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Claude Code</span>
+                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">프롬프팅</span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">AI에게 시키는 법을 배웁니다 (Cursor → Claude Code)</p>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div style="display: flex; align-items: flex-start; gap: 1rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--amber-soft); border: 2px solid var(--amber); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: var(--amber);">3</div>
+              <div style="width: 2px; height: 40px; background: linear-gradient(var(--amber), var(--rose));"></div>
+            </div>
+            <div style="padding-top: 8px;">
+              <div style="font-weight: 700; font-size: 17px; color: var(--amber); margin-bottom: 4px;">실전 프로젝트 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">4~6주</span></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Next.js</span>
+                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">포트폴리오</span>
+                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">CRUD 앱</span>
+                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">MVP</span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">직접 만들면서 감을 잡습니다</p>
+            </div>
+          </div>
+
+          <!-- Phase 4 -->
+          <div style="display: flex; align-items: flex-start; gap: 1rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--rose-soft); border: 2px solid var(--rose); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: var(--rose);">4</div>
+            </div>
+            <div style="padding-top: 8px;">
+              <div style="font-weight: 700; font-size: 17px; color: var(--rose); margin-bottom: 4px;">사업 적용 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">계속</span></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="background: var(--rose-soft); color: var(--rose); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">배포</span>
+                <span style="background: var(--rose-soft); color: var(--rose); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">사용자 피드백</span>
+                <span style="background: var(--rose-soft); color: var(--rose); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Y Combinator</span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">만든 것을 세상에 내놓고 사업합니다</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 핵심 메시지 -->
+        <div style="margin-top: 1.5rem; padding: 1rem 1.25rem; background: linear-gradient(135deg, var(--accent-soft), var(--green-soft)); border-radius: 10px; text-align: center;">
+          <p style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">전체 예상 기간: <strong style="color: var(--accent);">약 2~3개월</strong></p>
+          <p style="font-size: 13px; color: var(--text-muted); margin: 0;">매일 2~3시간 기준 · 속도는 사람마다 다르니 자기 페이스로!</p>
+        </div>
+
+        <!-- 도구 흐름 -->
+        <div style="margin-top: 1.5rem;">
+          <p style="font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">사용하는 도구의 변화</p>
+          <div style="display: flex; align-items: center; gap: 0; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 120px; background: var(--blue-soft); border: 1px solid rgba(37,99,235,0.2); border-radius: 10px 0 0 10px; padding: 10px 14px; text-align: center;">
+              <div style="font-size: 11px; color: var(--text-muted);">Phase 1</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--blue);">생활코딩</div>
+              <div style="font-size: 11px; color: var(--text-muted);">동영상 강의</div>
+            </div>
+            <div style="font-size: 18px; color: var(--text-muted); padding: 0 2px;">→</div>
+            <div style="flex: 1; min-width: 120px; background: var(--green-soft); border: 1px solid rgba(22,163,74,0.2); padding: 10px 14px; text-align: center;">
+              <div style="font-size: 11px; color: var(--text-muted);">Phase 2 전반</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--green);">Cursor</div>
+              <div style="font-size: 11px; color: var(--text-muted);">눈으로 보면서</div>
+            </div>
+            <div style="font-size: 18px; color: var(--text-muted); padding: 0 2px;">→</div>
+            <div style="flex: 1; min-width: 120px; background: var(--amber-soft); border: 1px solid rgba(217,119,6,0.2); border-radius: 0 10px 10px 0; padding: 10px 14px; text-align: center;">
+              <div style="font-size: 11px; color: var(--text-muted);">Phase 2 후반~</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--amber);">Claude Code</div>
+              <div style="font-size: 11px; color: var(--text-muted);">말만 하면 완성</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- AI-Native 학습법 -->
@@ -840,162 +999,6 @@
       </div>
     </section>
 
-    <!-- 전체 학습 흐름 다이어그램 -->
-    <section id="overview" style="margin-bottom: 48px;">
-      <h2 style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px;">전체 학습 흐름</h2>
-      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 24px;">4단계를 순서대로 따라가면 됩니다. 각 단계는 이전 단계 위에 쌓입니다.</p>
-
-      <!-- 다이어그램 -->
-      <div style="
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 2rem 1.5rem;
-        box-shadow: var(--shadow);
-      ">
-        <!-- Phase 흐름도 -->
-        <div style="display: flex; flex-direction: column; gap: 0; position: relative;">
-
-          <!-- Phase 1 -->
-          <div style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
-              <div style="
-                width: 48px; height: 48px; border-radius: 50%;
-                background: var(--accent-soft); border: 2px solid var(--accent);
-                display: flex; align-items: center; justify-content: center;
-                font-weight: 800; font-size: 16px; color: var(--accent);
-              ">1</div>
-              <div style="width: 2px; height: 40px; background: linear-gradient(var(--accent), var(--green));"></div>
-            </div>
-            <div style="padding-top: 8px;">
-              <div style="font-weight: 700; font-size: 17px; color: var(--accent); margin-bottom: 4px;">기초 체력 기르기 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">2~4주</span></div>
-              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">HTML</span>
-                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">CSS</span>
-                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">JavaScript</span>
-                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">데이터베이스</span>
-                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Git</span>
-              </div>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">생활코딩으로 웹의 기본 원리를 이해합니다</p>
-            </div>
-          </div>
-
-          <!-- Phase 2 -->
-          <div style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
-              <div style="
-                width: 48px; height: 48px; border-radius: 50%;
-                background: var(--green-soft); border: 2px solid var(--green);
-                display: flex; align-items: center; justify-content: center;
-                font-weight: 800; font-size: 16px; color: var(--green);
-              ">2</div>
-              <div style="width: 2px; height: 40px; background: linear-gradient(var(--green), var(--amber));"></div>
-            </div>
-            <div style="padding-top: 8px;">
-              <div style="font-weight: 700; font-size: 17px; color: var(--green); margin-bottom: 4px;">AI 도구 숙달 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">2~3주</span></div>
-              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Cursor</span>
-                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Claude Code</span>
-                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">프롬프팅</span>
-              </div>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">AI에게 시키는 법을 배웁니다 (Cursor → Claude Code)</p>
-            </div>
-          </div>
-
-          <!-- Phase 3 -->
-          <div style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
-              <div style="
-                width: 48px; height: 48px; border-radius: 50%;
-                background: var(--amber-soft); border: 2px solid var(--amber);
-                display: flex; align-items: center; justify-content: center;
-                font-weight: 800; font-size: 16px; color: var(--amber);
-              ">3</div>
-              <div style="width: 2px; height: 40px; background: linear-gradient(var(--amber), var(--rose));"></div>
-            </div>
-            <div style="padding-top: 8px;">
-              <div style="font-weight: 700; font-size: 17px; color: var(--amber); margin-bottom: 4px;">실전 프로젝트 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">3~4주</span></div>
-              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Next.js</span>
-                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">포트폴리오</span>
-                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">CRUD 앱</span>
-                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">MVP</span>
-              </div>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">직접 만들면서 감을 잡습니다</p>
-            </div>
-          </div>
-
-          <!-- Phase 4 -->
-          <div style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
-              <div style="
-                width: 48px; height: 48px; border-radius: 50%;
-                background: var(--rose-soft); border: 2px solid var(--rose);
-                display: flex; align-items: center; justify-content: center;
-                font-weight: 800; font-size: 16px; color: var(--rose);
-              ">4</div>
-            </div>
-            <div style="padding-top: 8px;">
-              <div style="font-weight: 700; font-size: 17px; color: var(--rose); margin-bottom: 4px;">사업 적용 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">계속</span></div>
-              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                <span style="background: var(--rose-soft); color: var(--rose); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">배포</span>
-                <span style="background: var(--rose-soft); color: var(--rose); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">사용자 피드백</span>
-                <span style="background: var(--rose-soft); color: var(--rose); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Y Combinator</span>
-              </div>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">만든 것을 세상에 내놓고 사업합니다</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 핵심 메시지 -->
-        <div style="
-          margin-top: 1.5rem; padding: 1rem 1.25rem;
-          background: linear-gradient(135deg, var(--accent-soft), var(--green-soft));
-          border-radius: 10px;
-          text-align: center;
-        ">
-          <p style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">전체 예상 기간: <strong style="color: var(--accent);">약 3개월</strong></p>
-          <p style="font-size: 13px; color: var(--text-muted); margin: 0;">매일 2~3시간 기준 · 속도는 사람마다 다르니 자기 페이스로!</p>
-        </div>
-
-        <!-- 도구 흐름 -->
-        <div style="margin-top: 1.5rem;">
-          <p style="font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">사용하는 도구의 변화</p>
-          <div style="display: flex; align-items: center; gap: 0; flex-wrap: wrap;">
-            <div style="
-              flex: 1; min-width: 120px;
-              background: var(--blue-soft); border: 1px solid rgba(37,99,235,0.2);
-              border-radius: 10px 0 0 10px; padding: 10px 14px; text-align: center;
-            ">
-              <div style="font-size: 11px; color: var(--text-muted);">Phase 1</div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--blue);">생활코딩</div>
-              <div style="font-size: 11px; color: var(--text-muted);">동영상 강의</div>
-            </div>
-            <div style="font-size: 18px; color: var(--text-muted); padding: 0 2px;">→</div>
-            <div style="
-              flex: 1; min-width: 120px;
-              background: var(--green-soft); border: 1px solid rgba(22,163,74,0.2);
-              padding: 10px 14px; text-align: center;
-            ">
-              <div style="font-size: 11px; color: var(--text-muted);">Phase 2 전반</div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--green);">Cursor</div>
-              <div style="font-size: 11px; color: var(--text-muted);">눈으로 보면서</div>
-            </div>
-            <div style="font-size: 18px; color: var(--text-muted); padding: 0 2px;">→</div>
-            <div style="
-              flex: 1; min-width: 120px;
-              background: var(--amber-soft); border: 1px solid rgba(217,119,6,0.2);
-              border-radius: 0 10px 10px 0; padding: 10px 14px; text-align: center;
-            ">
-              <div style="font-size: 11px; color: var(--text-muted);">Phase 2 후반~</div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--amber);">Claude Code</div>
-              <div style="font-size: 11px; color: var(--text-muted);">말만 하면 완성</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Timeline -->
     <section class="timeline">
 
@@ -1013,7 +1016,7 @@
         <!-- 생활코딩 상세 -->
         <div class="card">
           <h3>생활코딩에서 뭘 배워야 하나요?</h3>
-          <p>생활코딩(<a href="https://opentutorials.org/course/1" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">opentutorials.org</a>)에는 WEB, DB, 언어, 서버, 데이터과학, Git 등 <strong>수십 개 강좌</strong>가 있습니다. 전부 볼 필요 절대 없습니다. 아래 6개만 순서대로 보세요.</p>
+          <p>생활코딩(<a href="https://opentutorials.org/course/1" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">opentutorials.org</a>)에는 WEB, DB, 언어, 서버, 데이터과학, Git 등 <strong>수십 개 강좌</strong>가 있습니다. 전부 볼 필요 절대 없습니다. 아래 5가지만 순서대로 보세요. (DATABASE1과 MySQL은 이어서 봅니다)</p>
         </div>
 
         <!-- 커리큘럼 요약 테이블 -->
@@ -1207,6 +1210,31 @@
             <div class="resource-tag">무료 · 한국어</div>
           </a>
         </div>
+
+        <!-- 환경 설정 가이드 -->
+        <div class="tip-box" style="margin-top: 24px;">
+          <h3>시작 전 준비물 — 환경 설정</h3>
+          <p>생활코딩을 보기 전에 아래 도구를 설치하세요. 모르면 AI한테 "○○ 설치하는 법 알려줘"라고 물어보세요.</p>
+          <ul style="margin: 8px 0 0; padding-left: 1.5rem; line-height: 2;">
+            <li><strong>Chrome 브라우저</strong> — 웹 개발의 표준 도구. 이미 있을 가능성 높음</li>
+            <li><strong>VS Code (에디터)</strong> — <a href="https://code.visualstudio.com" target="_blank" rel="noopener" style="color: var(--blue);">code.visualstudio.com</a>에서 다운로드. 코드 작성하는 앱</li>
+            <li><strong>Node.js</strong> — <a href="https://nodejs.org" target="_blank" rel="noopener" style="color: var(--blue);">nodejs.org</a>에서 LTS 버전 다운로드. JavaScript를 실행하는 엔진</li>
+            <li><strong>터미널</strong> — Mac: "터미널" 앱 (기본 내장) / Windows: "PowerShell" (기본 내장). 명령어를 입력하는 검은 화면</li>
+          </ul>
+        </div>
+
+        <!-- Phase 1 → 2 전환 체크리스트 -->
+        <div class="card" style="margin-top: 16px; border-left: 3px solid var(--green);">
+          <h3>Phase 2로 넘어가도 되는 신호</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">아래 중 <strong style="color: var(--text);">3개 이상</strong>에 해당하면 Phase 2로 가세요:</p>
+          <ul style="line-height: 2;">
+            <li>HTML 태그가 뭔지 대충 안다 (<code style="background: var(--border-light); padding: 2px 6px; border-radius: 4px; font-size: 13px;">&lt;div&gt;</code>, <code style="background: var(--border-light); padding: 2px 6px; border-radius: 4px; font-size: 13px;">&lt;p&gt;</code>, <code style="background: var(--border-light); padding: 2px 6px; border-radius: 4px; font-size: 13px;">&lt;a&gt;</code>)</li>
+            <li>CSS로 글자색, 배경색 정도는 바꿀 수 있다</li>
+            <li>변수, 함수가 뭔지 설명할 수 있다 (완벽하지 않아도 OK)</li>
+            <li>SQL의 SELECT, INSERT가 뭔지 안다</li>
+            <li>Git commit이 "저장"이라는 걸 안다</li>
+          </ul>
+        </div>
       </div>
 
       <!-- ============ Phase 2 ============ -->
@@ -1239,7 +1267,7 @@
             </div>
 
             <div class="screenshot" style="margin: 1rem 0;">
-              <img src="images/cursor-landing.png" alt="Cursor 공식 사이트 — AI가 내장된 에디터">
+              <img src="images/cursor-landing.png" alt="Cursor 공식 사이트 — AI가 내장된 에디터" width="1280" height="900" loading="lazy">
               <div class="screenshot-caption">Cursor — VS Code와 똑같이 생겼지만 AI가 내장되어 있습니다. 왼쪽에 파일 목록, 가운데 코드, 오른쪽에 AI 채팅.</div>
             </div>
 
@@ -1268,7 +1296,7 @@
             </div>
 
             <div class="screenshot" style="margin: 1rem 0;">
-              <img src="images/claude-code-landing.png" alt="Claude Code 공식 문서 — 터미널 기반 AI 코딩 도구">
+              <img src="images/claude-code-landing.png" alt="Claude Code 공식 문서 — 터미널 기반 AI 코딩 도구" width="1280" height="900" loading="lazy">
               <div class="screenshot-caption">Claude Code 공식 문서. Terminal, VS Code, Desktop 등 다양한 환경에서 쓸 수 있습니다.</div>
             </div>
 
@@ -1344,7 +1372,7 @@
                 <tr>
                   <td><strong>가격</strong></td>
                   <td>무료 플랜 있음 (월 $20 Pro)</td>
-                  <td>Claude Max 구독 필요 (월 $100~)</td>
+                  <td>Pro $20 (제한적) / Max $100 (무제한)</td>
                 </tr>
               </tbody>
             </table>
@@ -1513,7 +1541,7 @@
 
         <!-- 영어 문서 스크린샷 예시 -->
         <div class="screenshot">
-          <img src="images/docs-english.png" alt="Claude Code 공식 문서 — 영어 원본">
+          <img src="images/docs-english.png" alt="Claude Code 공식 문서 — 영어 원본" width="1280" height="800" loading="lazy">
           <div class="screenshot-caption">Claude Code 공식 문서 화면. 영어지만 걱정 마세요 — 아래 방법으로 바로 한국어로 볼 수 있습니다.</div>
         </div>
 
@@ -1618,7 +1646,9 @@
                 <tr><th>기술</th><th>비유</th><th>하는 일</th></tr>
               </thead>
               <tbody>
-                <tr><td>Next.js</td><td>집의 구조</td><td>화면을 만든다 (페이지, 버튼, 입력칸 등)</td></tr>
+                <tr><td>React</td><td>레고 블록</td><td>화면을 조립한다 (버튼, 카드, 메뉴 등 부품)</td></tr>
+                <tr><td>Next.js</td><td>집의 구조</td><td>React 위에 페이지, 라우팅, 서버를 더한다</td></tr>
+                <tr><td>TypeScript</td><td>맞춤법 검사기</td><td>코드 실수를 미리 잡아준다 (.tsx 파일)</td></tr>
                 <tr><td>Supabase</td><td>창고 + 경비원</td><td>데이터 저장 + 로그인 처리</td></tr>
                 <tr><td>Vercel</td><td>부동산</td><td>만든 사이트를 인터넷에 올린다</td></tr>
                 <tr><td>Stripe</td><td>카드 단말기</td><td>결제를 받는다</td></tr>
@@ -1627,6 +1657,18 @@
           </div>
         </div>
 
+        <!-- Phase 2 → 3 전환 체크리스트 -->
+        <div class="card" style="margin-top: 16px; border-left: 3px solid var(--amber);">
+          <h3>Phase 3으로 넘어가도 되는 신호</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">아래 중 <strong style="color: var(--text);">3개 이상</strong>에 해당하면 Phase 3으로 가세요:</p>
+          <ul style="line-height: 2;">
+            <li>AI에게 "로그인 페이지 만들어줘" 같은 지시를 내릴 수 있다</li>
+            <li>에러가 나면 에러 메시지를 AI한테 붙여넣어서 해결할 수 있다</li>
+            <li>파일이 어디에 있는지 (src/app, src/components 등) 감이 온다</li>
+            <li>Cursor 또는 Claude Code를 설치해서 실제로 코드를 만들어 봤다</li>
+            <li>npm이 뭔지, git commit이 뭔지 설명할 수 있다</li>
+          </ul>
+        </div>
       </div>
 
       <!-- ============ Phase 3 ============ -->
@@ -1657,7 +1699,7 @@
 
         <!-- Next.js 스크린샷 -->
         <div class="screenshot">
-          <img src="images/nextjs-tutorial.png" alt="Next.js 공식 튜토리얼 페이지">
+          <img src="images/nextjs-tutorial.png" alt="Next.js 공식 튜토리얼 페이지" width="1280" height="800" loading="lazy">
           <div class="screenshot-caption">Next.js 공식 튜토리얼. 16개 챕터 중 필수 8개만 보면 됩니다. Chrome 우클릭으로 한국어 번역하세요.</div>
         </div>
 
@@ -1905,11 +1947,11 @@
     <section class="summary">
       <h2>전체 흐름 요약</h2>
       <div class="summary-flow">
-        <span class="summary-step">기초 2주</span>
+        <span class="summary-step">기초 2~4주</span>
         <span class="summary-arrow">→</span>
-        <span class="summary-step">도구 3주</span>
+        <span class="summary-step">도구 2~3주</span>
         <span class="summary-arrow">→</span>
-        <span class="summary-step">프로젝트 4주</span>
+        <span class="summary-step">프로젝트 4~6주</span>
         <span class="summary-arrow">→</span>
         <span class="summary-step">사업 적용</span>
       </div>
@@ -1920,12 +1962,12 @@
     <section class="cta-section">
       <p>지금 바로 시작하세요</p>
       <div class="cta-buttons">
-        <a class="cta-btn cta-btn-primary" href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code 시작하기</a>
-        <a class="cta-btn cta-btn-secondary" href="https://opentutorials.org/course/3084" target="_blank" rel="noopener">생활코딩으로 기초 배우기</a>
+        <a class="cta-btn cta-btn-primary" href="https://opentutorials.org/course/3084" target="_blank" rel="noopener">생활코딩으로 기초 시작하기</a>
+        <a class="cta-btn cta-btn-secondary" href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code 문서 보기</a>
       </div>
     </section>
 
-  </div>
+  </main>
 
   <footer>
     <div class="container">
@@ -1934,10 +1976,10 @@
   </footer>
 
   <!-- TOC Side Navigation -->
-  <nav class="toc-nav" id="toc">
+  <nav class="toc-nav" id="toc" aria-label="목차 네비게이션">
     <a href="#intro"><span class="toc-dot"></span>바이브 코딩이란</a>
-    <a href="#ai-learning"><span class="toc-dot"></span>AI 학습법</a>
     <a href="#overview"><span class="toc-dot"></span>전체 흐름</a>
+    <a href="#ai-learning"><span class="toc-dot"></span>AI 학습법</a>
     <a href="#phase1" data-phase="1"><span class="toc-dot"></span>Phase 1 · 기초</a>
     <a href="#phase2" data-phase="2"><span class="toc-dot"></span>Phase 2 · AI 도구</a>
     <a href="#phase3" data-phase="3"><span class="toc-dot"></span>Phase 3 · 프로젝트</a>
