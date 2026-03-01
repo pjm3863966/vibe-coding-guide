@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>바이브 코딩 가이드 — AI와 함께 코딩하고, 사업하기</title>
+  <meta name="description" content="코딩 입문자를 위한 바이브 코딩 로드맵. AI 도구를 활용해 아이디어를 제품으로 만드는 실전 가이드.">
+  <meta property="og:title" content="바이브 코딩 가이드">
+  <meta property="og:description" content="코딩 제로에서 AI로 사업하기까지의 실전 로드맵">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --surface-hover: #f5f5f5;
+      --border: #e5e5e5;
+      --border-light: #f0f0f0;
+      --text: #171717;
+      --text-muted: #737373;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.08);
+      --green: #16a34a;
+      --green-soft: rgba(22, 163, 74, 0.08);
+      --amber: #d97706;
+      --amber-soft: rgba(217, 119, 6, 0.08);
+      --rose: #e11d48;
+      --rose-soft: rgba(225, 29, 72, 0.06);
+      --blue: #2563eb;
+      --blue-soft: rgba(37, 99, 235, 0.08);
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 48px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Intro */
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow);
+    }
+
+    .intro h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .intro p:last-child { margin-bottom: 0; }
+
+    .intro strong { color: var(--text); }
+
+    /* Timeline */
+    .timeline {
+      padding: 0 0 32px;
+    }
+
+    .phase {
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 56px;
+    }
+
+    .phase::before {
+      content: '';
+      position: absolute;
+      left: 9px;
+      top: 36px;
+      bottom: -56px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .phase:last-child::before { display: none; }
+
+    .phase-dot {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 3px solid;
+      background: var(--bg);
+    }
+
+    .phase:nth-child(1) .phase-dot { border-color: var(--accent); }
+    .phase:nth-child(2) .phase-dot { border-color: var(--green); }
+    .phase:nth-child(3) .phase-dot { border-color: var(--amber); }
+    .phase:nth-child(4) .phase-dot { border-color: var(--rose); }
+
+    .phase-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .phase:nth-child(1) .phase-label { color: var(--accent); }
+    .phase:nth-child(2) .phase-label { color: var(--green); }
+    .phase:nth-child(3) .phase-label { color: var(--amber); }
+    .phase:nth-child(4) .phase-label { color: var(--rose); }
+
+    .phase h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .phase-duration {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .phase-goal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: var(--text-muted);
+      box-shadow: var(--shadow);
+    }
+
+    .phase-goal strong { color: var(--text); }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .card ul li::before {
+      content: '›';
+      position: absolute;
+      left: 4px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .card ul li strong { color: var(--text); }
+
+    /* Detail sections for learning */
+    .detail-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .detail-header {
+      padding: 16px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .detail-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .detail-number.purple { background: var(--accent-soft); color: var(--accent); }
+    .detail-number.green { background: var(--green-soft); color: var(--green); }
+    .detail-number.blue { background: var(--blue-soft); color: var(--blue); }
+    .detail-number.amber { background: var(--amber-soft); color: var(--amber); }
+
+    .detail-body {
+      padding: 20px 24px;
+    }
+
+    .detail-body p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .detail-body p:last-child { margin-bottom: 0; }
+    .detail-body strong { color: var(--text); }
+
+    .learn-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .learn-item:last-child { border-bottom: none; }
+
+    .learn-item h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .learn-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    .learn-item .skip-note {
+      font-size: 12px;
+      color: var(--rose);
+      margin-top: 4px;
+    }
+
+    /* Prompt Example */
+    .prompt-example {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .prompt-header {
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .prompt-header.good { color: var(--green); background: var(--green-soft); }
+    .prompt-header.bad { color: var(--rose); background: var(--rose-soft); }
+
+    .prompt-body {
+      padding: 16px 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* Table */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .info-table th,
+    .info-table td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .info-table th {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .info-table td:first-child {
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .info-table td:last-child { color: var(--text-muted); }
+    .info-table tr:last-child td { border-bottom: none; }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .tag-good { background: var(--green-soft); color: var(--green); }
+    .tag-warn { background: var(--amber-soft); color: var(--amber); }
+
+    /* Resource cards */
+    .resources {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .resource {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow);
+    }
+
+    .resource:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.1);
+    }
+
+    .resource-name {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .resource-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .resource-tag {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Summary */
+    .summary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin: 48px 0;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .summary h2 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .summary-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .summary-step {
+      padding: 10px 18px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    .summary-arrow { color: var(--text-muted); font-size: 18px; }
+
+    .summary p {
+      margin-top: 24px;
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .summary p strong { color: var(--text); }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 0 0 80px;
+    }
+
+    .cta-section p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+
+    .cta-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .cta-btn-primary { background: var(--accent); color: white; }
+
+    .cta-btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .hero { padding: 60px 0 32px; }
+      .resources { grid-template-columns: 1fr; }
+      .summary-flow { flex-direction: column; }
+      .summary-arrow { transform: rotate(90deg); }
+      .phase { padding-left: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-badge">2026 Edition</div>
+      <h1>코딩 제로에서<br><span>바이브 코딩</span>으로<br>사업하기</h1>
+      <p>AI에게 말로 설명하면 코드가 만들어지는 시대.<br>코딩 입문자를 위한 실전 로드맵.</p>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+      <h2>바이브 코딩이 뭔가요?</h2>
+      <p>바이브 코딩(Vibe Coding)은 <strong>AI에게 자연어로 설명하면 코드를 만들어주는 방식</strong>입니다. 직접 코드를 한 줄 한 줄 치는 게 아니라, "로그인 페이지 만들어줘"처럼 말하면 AI가 코드를 생성합니다.</p>
+      <p>하지만 <strong>"코딩을 전혀 몰라도 된다"는 건 반쯤만 맞습니다.</strong> AI가 만든 결과물을 확인하고, 문제가 생겼을 때 어디가 잘못됐는지 파악하려면 기초 지식이 필요합니다.</p>
+      <p>이 가이드는 <strong>코딩 경험 0%</strong>인 사람이 AI 도구를 활용해 실제 서비스를 만들고 사업할 수 있게 되기까지의 현실적인 로드맵입니다.</p>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline">
+
+      <!-- ============ Phase 1 ============ -->
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <div class="phase-label">Phase 1</div>
+        <h2>기초 체력 기르기</h2>
+        <p class="phase-duration">2 — 4주</p>
+
+        <div class="phase-goal">
+          <strong>이 단계의 목표:</strong> AI가 만든 코드를 봤을 때 "이건 로그인 처리하는 부분이구나" 정도로 알아볼 수 있는 수준. 직접 코드를 술술 쓸 필요는 전혀 없습니다.
+        </div>
+
+        <!-- 생활코딩 상세 -->
+        <div class="card">
+          <h3>생활코딩에서 뭘 배워야 하나요?</h3>
+          <p>생활코딩(opentutorials.org)은 한국어 무료 강의 중 입문자에게 가장 좋습니다. <strong>전부 다 볼 필요 없습니다.</strong> 아래 순서대로만 보세요.</p>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number purple">1</span>
+            WEB1 — HTML &amp; Internet
+          </div>
+          <div class="detail-body">
+            <p>웹페이지가 어떻게 만들어지는지 배웁니다. <strong>모든 웹 서비스의 기초</strong>입니다.</p>
+            <div class="learn-item">
+              <h4>배우는 것</h4>
+              <p>HTML 태그가 뭔지, 웹페이지가 어떻게 구성되는지, 텍스트/이미지/링크를 넣는 법</p>
+            </div>
+            <div class="learn-item">
+              <h4>왜 필요한지</h4>
+              <p>AI에게 "이 버튼을 왼쪽으로 옮겨줘"라고 말하려면, 화면이 어떤 요소들로 구성되는지 알아야 합니다.</p>
+            </div>
+            <div class="learn-item">
+              <h4>어디까지 보면 되나요</h4>
+              <p><strong>끝까지 다 보세요.</strong> 짧고 쉽습니다. 하루면 충분합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number purple">2</span>
+            WEB2 — CSS
+          </div>
+          <div class="detail-body">
+            <p>웹페이지를 <strong>예쁘게 꾸미는 법</strong>을 배웁니다. 색상, 크기, 배치 등.</p>
+            <div class="learn-item">
+              <h4>배우는 것</h4>
+              <p>글자 색 바꾸기, 배경 넣기, 요소 크기 조절, 가운데 정렬, 레이아웃 잡기</p>
+            </div>
+            <div class="learn-item">
+              <h4>왜 필요한지</h4>
+              <p>AI가 만든 화면이 마음에 안 들 때 "여백 좀 늘려줘", "이 버튼 색상을 파란색으로 바꿔줘" 같은 정확한 수정 요청을 하려면 CSS 개념을 알아야 합니다.</p>
+            </div>
+            <div class="learn-item">
+              <h4>어디까지 보면 되나요</h4>
+              <p>박스 모델, flexbox까지 보면 됩니다. grid는 건너뛰어도 괜찮습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number purple">3</span>
+            WEB2 — JavaScript
+          </div>
+          <div class="detail-body">
+            <p>웹페이지에 <strong>동작을 추가하는 법</strong>을 배웁니다. 버튼 클릭, 데이터 처리 등.</p>
+            <div class="learn-item">
+              <h4>배우는 것</h4>
+              <p>변수 (값을 저장하는 상자), 조건문 (if — 만약 ~하면), 반복문 (같은 작업 반복), 함수 (작업 묶음)</p>
+            </div>
+            <div class="learn-item">
+              <h4>왜 필요한지</h4>
+              <p>모든 프로그래밍의 기본 개념입니다. AI 코드를 읽을 때 "여기서 로그인 성공하면 대시보드로 넘어가는 거구나"를 이해하려면 이 개념들을 알아야 합니다.</p>
+            </div>
+            <div class="learn-item">
+              <h4>어디까지 보면 되나요</h4>
+              <p>함수까지 보면 충분합니다. <strong>객체, 클래스, 정규표현식은 나중에 필요할 때 보세요.</strong></p>
+              <p class="skip-note">완벽히 이해 안 돼도 괜찮습니다. "이런 게 있구나" 수준이면 됩니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number purple">4</span>
+            Git (버전 관리)
+          </div>
+          <div class="detail-body">
+            <p>코드의 <strong>변경 이력을 관리하는 도구</strong>입니다. "세이브 포인트"라고 생각하면 됩니다.</p>
+            <div class="learn-item">
+              <h4>배우는 것</h4>
+              <p>저장(commit), 업로드(push), 다운로드(pull), 되돌리기(revert)</p>
+            </div>
+            <div class="learn-item">
+              <h4>왜 필요한지</h4>
+              <p>AI가 코드를 잘못 고쳐서 사이트가 망가졌을 때, Git이 있으면 <strong>이전 상태로 바로 되돌릴 수 있습니다.</strong> 없으면 처음부터 다시 만들어야 합니다.</p>
+            </div>
+            <div class="learn-item">
+              <h4>추천</h4>
+              <p>생활코딩 Git 수업을 보거나, GitHub Desktop 앱을 설치하면 클릭만으로 할 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>이 단계에서 하지 말아야 할 것</h3>
+          <ul>
+            <li><strong>코딩 문제 풀기</strong> — 알고리즘 문제는 바이브 코딩에 불필요</li>
+            <li><strong>프레임워크 공부</strong> — React, Next.js는 아직 안 봐도 됨</li>
+            <li><strong>완벽히 이해하려고 하기</strong> — 70% 이해하면 다음 단계로</li>
+          </ul>
+        </div>
+
+        <div class="resources">
+          <a class="resource" href="https://opentutorials.org/course/3084" target="_blank" rel="noopener">
+            <div class="resource-name">생활코딩 WEB1</div>
+            <div class="resource-desc">HTML 기초 (하루면 끝)</div>
+            <div class="resource-tag">무료 · 한국어</div>
+          </a>
+          <a class="resource" href="https://opentutorials.org/course/3086" target="_blank" rel="noopener">
+            <div class="resource-name">생활코딩 WEB2 CSS</div>
+            <div class="resource-desc">꾸미기 (2-3일)</div>
+            <div class="resource-tag">무료 · 한국어</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============ Phase 2 ============ -->
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <div class="phase-label">Phase 2</div>
+        <h2>AI 도구 숙달</h2>
+        <p class="phase-duration">2 — 3주</p>
+
+        <div class="phase-goal">
+          <strong>이 단계의 목표:</strong> AI에게 말로 설명하면 원하는 기능이 만들어지고, 에러가 나면 스스로 해결할 수 있는 상태
+        </div>
+
+        <div class="card">
+          <h3>AI-Native 개발이란?</h3>
+          <p>전통적 코딩은 "문법 외우기 → 코드 직접 치기"였지만, AI-Native 개발은 다릅니다:</p>
+          <ul>
+            <li><strong>코드를 쓰는 사람</strong>이 아니라 <strong>코드를 지시하는 사람</strong>이 됩니다</li>
+            <li>중요한 건 프로그래밍 문법이 아니라 <strong>"뭘 만들고 싶은지" 명확히 설명하는 능력</strong></li>
+            <li>AI가 만든 결과물을 <strong>검수하고 방향을 잡아주는 것</strong>이 핵심 역할</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number green">1</span>
+            AI 도구 설치하고 써보기
+          </div>
+          <div class="detail-body">
+            <div class="learn-item">
+              <h4>Claude Code (터미널 기반)</h4>
+              <p>터미널에서 AI와 대화하며 코드를 만듭니다. 가장 강력하지만 터미널에 익숙해야 합니다.</p>
+            </div>
+            <div class="learn-item">
+              <h4>Cursor (에디터 기반)</h4>
+              <p>VS Code와 비슷한 에디터인데, AI가 내장되어 있습니다. 처음 시작하기에 좋습니다.</p>
+            </div>
+            <div class="learn-item">
+              <h4>처음엔 뭘 쓸까?</h4>
+              <p><strong>Cursor로 시작</strong>하는 걸 추천합니다. 화면이 있어서 직관적이고, 코드가 어디에 만들어지는지 바로 볼 수 있습니다. 익숙해지면 Claude Code로 넘어가세요.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number green">2</span>
+            프롬프팅 — AI에게 잘 시키는 법
+          </div>
+          <div class="detail-body">
+            <p>바이브 코딩의 핵심은 <strong>"어떻게 시키느냐"</strong>입니다. 같은 AI라도 시키는 방법에 따라 결과가 천지차이입니다.</p>
+
+            <div class="learn-item">
+              <h4>원칙 1: 구체적으로 설명한다</h4>
+              <p>"로그인 만들어줘" (X) → "이메일과 비밀번호 입력 필드가 있는 로그인 페이지. 로그인 버튼 클릭 시 /dashboard로 이동" (O)</p>
+            </div>
+            <div class="learn-item">
+              <h4>원칙 2: 한 번에 하나씩</h4>
+              <p>한꺼번에 10가지를 시키면 품질이 떨어집니다. 하나 완성 → 확인 → 다음 작업.</p>
+            </div>
+            <div class="learn-item">
+              <h4>원칙 3: 결과를 확인한다</h4>
+              <p>AI가 만든 걸 무조건 믿지 마세요. 실행해보고, 눈으로 확인하고, 이상하면 수정 요청하세요.</p>
+            </div>
+            <div class="learn-item">
+              <h4>원칙 4: 에러 메시지 = 보물</h4>
+              <p>에러가 나면 당황하지 말고, <strong>에러 메시지를 그대로 복사해서 AI에게 붙여넣으세요.</strong> AI가 알아서 고쳐줍니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-example">
+          <div class="prompt-header good">좋은 프롬프트</div>
+          <div class="prompt-body">"로그인 페이지를 만들어줘. 이메일과 비밀번호 입력 필드가 있고, 로그인 버튼을 누르면 /dashboard로 이동해. Supabase Auth를 써줘. 모바일에서도 잘 보이게 해줘."</div>
+        </div>
+        <div class="prompt-example">
+          <div class="prompt-header bad">나쁜 프롬프트</div>
+          <div class="prompt-body">"로그인 만들어줘"</div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number green">3</span>
+            핵심 기술 스택 이해하기
+          </div>
+          <div class="detail-body">
+            <p><strong>직접 공부할 필요 없습니다.</strong> "이게 뭐하는 건지"만 알면 됩니다. AI가 코드는 알아서 씁니다.</p>
+            <table class="info-table">
+              <thead>
+                <tr><th>기술</th><th>비유</th><th>하는 일</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Next.js</td><td>집의 구조</td><td>화면을 만든다 (페이지, 버튼, 입력칸 등)</td></tr>
+                <tr><td>Supabase</td><td>창고 + 경비원</td><td>데이터 저장 + 로그인 처리</td></tr>
+                <tr><td>Vercel</td><td>부동산</td><td>만든 사이트를 인터넷에 올린다</td></tr>
+                <tr><td>Stripe</td><td>카드 단말기</td><td>결제를 받는다</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number green">4</span>
+            AI-Native 학습법
+          </div>
+          <div class="detail-body">
+            <p>전통적 학습과 AI-Native 학습은 완전히 다릅니다:</p>
+            <table class="info-table">
+              <thead>
+                <tr><th>전통적</th><th>AI-Native</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>문법 암기</td><td>필요한 것만 AI에게 물어보기</td></tr>
+                <tr><td>바닥부터 코딩</td><td>"이거 만들어줘"로 시작</td></tr>
+                <tr><td>에러 직접 디버깅</td><td>에러 메시지 복붙하면 AI가 해결</td></tr>
+                <tr><td>문서 읽기</td><td>AI에게 "이거 뭐야?" 물어보기</td></tr>
+                <tr><td>6개월 후 첫 프로젝트</td><td>첫 날부터 뭔가 만들기</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top: 16px;"><strong>핵심 루틴:</strong> 만들고 싶은 거 생각 → AI에게 시킴 → 안 되면 에러 보여줌 → 고쳐달라 함 → 반복. 이게 전부입니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ Phase 3 ============ -->
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <div class="phase-label">Phase 3</div>
+        <h2>실전 프로젝트</h2>
+        <p class="phase-duration">4 — 6주</p>
+
+        <div class="phase-goal">
+          <strong>이 단계의 목표:</strong> 하나의 제품을 처음부터 배포까지 완성해본 경험. 이게 있으면 뭐든 만들 수 있다는 자신감이 생깁니다.
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number amber">1</span>
+            포트폴리오 사이트 만들기 (첫 번째 프로젝트)
+          </div>
+          <div class="detail-body">
+            <p>자기소개 페이지를 만들어서 인터넷에 올려봅니다. <strong>가장 쉽고, 배포까지 경험</strong>할 수 있습니다.</p>
+            <p>AI에게 이렇게 시키세요: "Next.js로 개인 포트폴리오 사이트 만들어줘. 자기소개, 프로젝트 목록, 연락처 섹션이 있으면 돼."</p>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number amber">2</span>
+            CRUD 앱 만들기 (두 번째 프로젝트)
+          </div>
+          <div class="detail-body">
+            <p>메모장이나 할일 목록처럼 <strong>데이터를 만들고(Create), 읽고(Read), 수정하고(Update), 삭제하는(Delete)</strong> 앱을 만들어봅니다.</p>
+            <p>여기서 <strong>데이터베이스 연동</strong>을 처음 경험합니다. 거의 모든 서비스의 기본 구조가 CRUD입니다.</p>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number amber">3</span>
+            사업 아이템 MVP (세 번째 프로젝트)
+          </div>
+          <div class="detail-body">
+            <p>실제로 만들고 싶은 서비스의 <strong>최소 버전</strong>을 만들어봅니다.</p>
+            <p><strong>MVP(Minimum Viable Product)</strong> = 핵심 기능 딱 1개만 넣은 버전. 예를 들어 배달앱을 만들고 싶다면, 첫 MVP는 "메뉴 보기 + 주문하기" 딱 이것만.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>이 단계에서 배우는 것</h3>
+          <ul>
+            <li>AI 코드가 <strong>동작하지 않을 때</strong> 대처하는 법</li>
+            <li>머릿속 아이디어를 <strong>구체적 지시로 변환</strong>하는 법</li>
+            <li><strong>배포 → 버그 발견 → 수정</strong> 사이클 반복</li>
+            <li>"이건 AI한테 시키고, 이건 직접 해야 한다"를 구분하는 감각</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ============ Phase 4 ============ -->
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <div class="phase-label">Phase 4</div>
+        <h2>사업 적용</h2>
+        <p class="phase-duration">실전</p>
+
+        <div class="phase-goal">
+          <strong>이 단계의 목표:</strong> AI를 활용해 실제 서비스를 만들고 수익을 내는 것
+        </div>
+
+        <div class="card">
+          <h3>AI로 잘 되는 것</h3>
+          <ul>
+            <li>MVP 빠르게 만들기 <span class="tag tag-good">기존 몇 달 → 며칠</span></li>
+            <li>랜딩 페이지, 관리자 페이지 같은 정형화된 것</li>
+            <li>API 연동, 데이터 처리 기능</li>
+            <li>디자인 수정, 반응형 적용</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>직접 챙겨야 하는 것</h3>
+          <ul>
+            <li><strong>보안</strong> — AI 코드에 보안 허점이 있을 수 있음 <span class="tag tag-warn">중요</span></li>
+            <li><strong>결제 로직</strong> — 돈 관련은 반드시 전문가 검증</li>
+            <li><strong>법적 요건</strong> — 개인정보보호법, 이용약관, 사업자 등록</li>
+            <li><strong>스케일링</strong> — 사용자 수천 명 넘어가면 구조 변경 필요</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>사업 관점 핵심 3가지</h3>
+          <ul>
+            <li>코드보다 <strong>문제 정의가 더 중요</strong> — "뭘 만들지"가 "어떻게 만들지"보다 우선</li>
+            <li>MVP는 <strong>핵심 기능 1개</strong>만 넣고 시장 반응 먼저 확인</li>
+            <li>기술 공부에 빠지지 말 것 — <strong>만드는 데 필요한 만큼만</strong> 배우기</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Summary -->
+    <section class="summary">
+      <h2>전체 흐름 요약</h2>
+      <div class="summary-flow">
+        <span class="summary-step">기초 2주</span>
+        <span class="summary-arrow">→</span>
+        <span class="summary-step">도구 3주</span>
+        <span class="summary-arrow">→</span>
+        <span class="summary-step">프로젝트 4주</span>
+        <span class="summary-arrow">→</span>
+        <span class="summary-step">사업 적용</span>
+      </div>
+      <p>가장 중요한 건:<br><strong>완벽히 준비하고 시작하지 말고,<br>부딪히면서 배우는 것.</strong></p>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <p>지금 바로 시작하세요</p>
+      <div class="cta-buttons">
+        <a class="cta-btn cta-btn-primary" href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code 시작하기</a>
+        <a class="cta-btn cta-btn-secondary" href="https://opentutorials.org/course/3084" target="_blank" rel="noopener">생활코딩으로 기초 배우기</a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      Made with AI · <a href="https://github.com/pjm3863966/vibe-coding-guide" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+</body>
+</html>
