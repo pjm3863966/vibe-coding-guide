@@ -774,6 +774,162 @@
       </div>
     </section>
 
+    <!-- 전체 학습 흐름 다이어그램 -->
+    <section style="margin-bottom: 48px;">
+      <h2 style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px;">전체 학습 흐름</h2>
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 24px;">4단계를 순서대로 따라가면 됩니다. 각 단계는 이전 단계 위에 쌓입니다.</p>
+
+      <!-- 다이어그램 -->
+      <div style="
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 2rem 1.5rem;
+        box-shadow: var(--shadow);
+      ">
+        <!-- Phase 흐름도 -->
+        <div style="display: flex; flex-direction: column; gap: 0; position: relative;">
+
+          <!-- Phase 1 -->
+          <div style="display: flex; align-items: flex-start; gap: 1rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+              <div style="
+                width: 48px; height: 48px; border-radius: 50%;
+                background: var(--accent-soft); border: 2px solid var(--accent);
+                display: flex; align-items: center; justify-content: center;
+                font-weight: 800; font-size: 16px; color: var(--accent);
+              ">1</div>
+              <div style="width: 2px; height: 40px; background: linear-gradient(var(--accent), var(--green));"></div>
+            </div>
+            <div style="padding-top: 8px;">
+              <div style="font-weight: 700; font-size: 17px; color: var(--accent); margin-bottom: 4px;">기초 체력 기르기 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">2~4주</span></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">HTML</span>
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">CSS</span>
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">JavaScript</span>
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">데이터베이스</span>
+                <span style="background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Git</span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">생활코딩으로 웹의 기본 원리를 이해합니다</p>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div style="display: flex; align-items: flex-start; gap: 1rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+              <div style="
+                width: 48px; height: 48px; border-radius: 50%;
+                background: var(--green-soft); border: 2px solid var(--green);
+                display: flex; align-items: center; justify-content: center;
+                font-weight: 800; font-size: 16px; color: var(--green);
+              ">2</div>
+              <div style="width: 2px; height: 40px; background: linear-gradient(var(--green), var(--amber));"></div>
+            </div>
+            <div style="padding-top: 8px;">
+              <div style="font-weight: 700; font-size: 17px; color: var(--green); margin-bottom: 4px;">AI 도구 숙달 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">2~3주</span></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Cursor</span>
+                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Claude Code</span>
+                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Next.js</span>
+                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">프롬프팅</span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">AI에게 시키는 법을 배웁니다 (Cursor → Claude Code)</p>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div style="display: flex; align-items: flex-start; gap: 1rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+              <div style="
+                width: 48px; height: 48px; border-radius: 50%;
+                background: var(--amber-soft); border: 2px solid var(--amber);
+                display: flex; align-items: center; justify-content: center;
+                font-weight: 800; font-size: 16px; color: var(--amber);
+              ">3</div>
+              <div style="width: 2px; height: 40px; background: linear-gradient(var(--amber), var(--rose));"></div>
+            </div>
+            <div style="padding-top: 8px;">
+              <div style="font-weight: 700; font-size: 17px; color: var(--amber); margin-bottom: 4px;">실전 프로젝트 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">3~4주</span></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">포트폴리오</span>
+                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">CRUD 앱</span>
+                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">MVP</span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">직접 만들면서 감을 잡습니다</p>
+            </div>
+          </div>
+
+          <!-- Phase 4 -->
+          <div style="display: flex; align-items: flex-start; gap: 1rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+              <div style="
+                width: 48px; height: 48px; border-radius: 50%;
+                background: var(--rose-soft); border: 2px solid var(--rose);
+                display: flex; align-items: center; justify-content: center;
+                font-weight: 800; font-size: 16px; color: var(--rose);
+              ">4</div>
+            </div>
+            <div style="padding-top: 8px;">
+              <div style="font-weight: 700; font-size: 17px; color: var(--rose); margin-bottom: 4px;">사업 적용 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">계속</span></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="background: var(--rose-soft); color: var(--rose); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">배포</span>
+                <span style="background: var(--rose-soft); color: var(--rose); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">사용자 피드백</span>
+                <span style="background: var(--rose-soft); color: var(--rose); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Y Combinator</span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">만든 것을 세상에 내놓고 사업합니다</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 핵심 메시지 -->
+        <div style="
+          margin-top: 1.5rem; padding: 1rem 1.25rem;
+          background: linear-gradient(135deg, var(--accent-soft), var(--green-soft));
+          border-radius: 10px;
+          text-align: center;
+        ">
+          <p style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">전체 예상 기간: <strong style="color: var(--accent);">약 3개월</strong></p>
+          <p style="font-size: 13px; color: var(--text-muted); margin: 0;">매일 2~3시간 기준 · 속도는 사람마다 다르니 자기 페이스로!</p>
+        </div>
+
+        <!-- 도구 흐름 -->
+        <div style="margin-top: 1.5rem;">
+          <p style="font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">사용하는 도구의 변화</p>
+          <div style="display: flex; align-items: center; gap: 0; flex-wrap: wrap;">
+            <div style="
+              flex: 1; min-width: 120px;
+              background: var(--blue-soft); border: 1px solid rgba(37,99,235,0.2);
+              border-radius: 10px 0 0 10px; padding: 10px 14px; text-align: center;
+            ">
+              <div style="font-size: 11px; color: var(--text-muted);">Phase 1</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--blue);">생활코딩</div>
+              <div style="font-size: 11px; color: var(--text-muted);">동영상 강의</div>
+            </div>
+            <div style="font-size: 18px; color: var(--text-muted); padding: 0 2px;">→</div>
+            <div style="
+              flex: 1; min-width: 120px;
+              background: var(--green-soft); border: 1px solid rgba(22,163,74,0.2);
+              padding: 10px 14px; text-align: center;
+            ">
+              <div style="font-size: 11px; color: var(--text-muted);">Phase 2 전반</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--green);">Cursor</div>
+              <div style="font-size: 11px; color: var(--text-muted);">눈으로 보면서</div>
+            </div>
+            <div style="font-size: 18px; color: var(--text-muted); padding: 0 2px;">→</div>
+            <div style="
+              flex: 1; min-width: 120px;
+              background: var(--amber-soft); border: 1px solid rgba(217,119,6,0.2);
+              border-radius: 0 10px 10px 0; padding: 10px 14px; text-align: center;
+            ">
+              <div style="font-size: 11px; color: var(--text-muted);">Phase 2 후반~</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--amber);">Claude Code</div>
+              <div style="font-size: 11px; color: var(--text-muted);">말만 하면 완성</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Timeline -->
     <section class="timeline">
 
