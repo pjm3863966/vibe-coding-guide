@@ -838,6 +838,7 @@
                 <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Next.js</span>
                 <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">포트폴리오</span>
                 <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">CRUD 앱</span>
+                <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">자동화</span>
                 <span style="background: var(--amber-soft); color: var(--amber); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">MVP</span>
               </div>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">직접 만들면서 감을 잡습니다</p>
@@ -1840,7 +1841,91 @@
         <div class="detail-section">
           <div class="detail-header">
             <span class="detail-number amber">4</span>
-            사업 아이템 MVP (세 번째 프로젝트)
+            비즈니스 자동화 만들기 (세 번째 프로젝트)
+          </div>
+          <div class="detail-body">
+            <p>사업자들이 매일 반복하는 작업 — 폼 응답 정리, 데이터 동기화, 리포트 생성 — 을 <strong>코드로 자동화</strong>해봅니다.</p>
+            <p>Make, Zapier 같은 노코드 도구는 월 2~5만원씩 내면서도 기능 제한이 많습니다. <strong>Claude Code로 직접 만들면 무료이고, 원하는 대로 커스텀</strong>할 수 있습니다.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>왜 직접 만드나요? — Make vs 직접 코딩</h3>
+          <table class="info-table">
+            <thead>
+              <tr><th></th><th>Make (노코드)</th><th>Claude Code (직접)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>비용</td><td>월 $9~$29+</td><td><strong>무료</strong> (API 비용만)</td></tr>
+              <tr><td>실행 횟수</td><td>월 1,000~10,000회 제한</td><td><strong>무제한</strong></td></tr>
+              <tr><td>커스텀</td><td>제공되는 모듈만 가능</td><td><strong>뭐든 가능</strong></td></tr>
+              <tr><td>난이도</td><td>쉬움 (드래그&드롭)</td><td>AI가 대신 짜줌</td></tr>
+              <tr><td>학습 가치</td><td>도구 사용법만</td><td><strong>API 연동 원리 이해</strong></td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">Make를 쓸 줄 아는 건 좋지만, <strong style="color: var(--text);">원리를 이해하면 어떤 도구든</strong> 금방 배웁니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>실전 자동화 시나리오</h3>
+          <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">사업자들이 실제로 많이 쓰는 자동화 워크플로우입니다. Claude Code에게 이렇게 시키세요:</p>
+
+          <div class="learn-item">
+            <h4>1. Google Forms → Google Sheets 자동 정리</h4>
+            <p style="margin-bottom: 8px;">고객 설문, 주문 접수, 상담 신청 폼의 응답을 자동으로 정리합니다.</p>
+            <div class="prompt-box">
+              <div class="prompt-label">Claude Code에게</div>
+              <div class="prompt-content">"Google Forms 응답이 들어오면 Google Sheets에 날짜별로 자동 정리하고, 새 응답이 오면 슬랙으로 알림 보내는 스크립트 만들어줘. Google Apps Script 써줘."</div>
+            </div>
+          </div>
+
+          <div class="learn-item">
+            <h4>2. Google Sheets → Notion DB 자동 동기화</h4>
+            <p style="margin-bottom: 8px;">스프레드시트 데이터를 Notion 데이터베이스에 자동으로 넣습니다.</p>
+            <div class="prompt-box">
+              <div class="prompt-label">Claude Code에게</div>
+              <div class="prompt-content">"Google Sheets에 새 행이 추가되면 Notion API로 데이터베이스에 자동 추가하는 Node.js 스크립트 만들어줘. 10분마다 자동 실행되게 cron 설정도 해줘."</div>
+            </div>
+          </div>
+
+          <div class="learn-item">
+            <h4>3. 고객 문의 자동 분류 + 응답</h4>
+            <p style="margin-bottom: 8px;">들어오는 문의를 AI가 카테고리별로 분류하고, 자주 묻는 질문은 자동 응답합니다.</p>
+            <div class="prompt-box">
+              <div class="prompt-label">Claude Code에게</div>
+              <div class="prompt-content">"이메일이나 폼으로 들어온 고객 문의를 OpenAI API로 자동 분류하고, FAQ에 해당하면 자동 답변 보내는 시스템 만들어줘."</div>
+            </div>
+          </div>
+
+          <div class="learn-item">
+            <h4>4. 주간 리포트 자동 생성</h4>
+            <p style="margin-bottom: 8px;">매주 매출, 문의 건수, 신규 고객 수를 정리해서 이메일로 보냅니다.</p>
+            <div class="prompt-box">
+              <div class="prompt-label">Claude Code에게</div>
+              <div class="prompt-content">"Google Sheets에서 이번 주 매출 데이터 가져와서 요약 리포트 HTML 만들고, Nodemailer로 매주 월요일 아침에 자동 이메일 발송하는 스크립트 만들어줘."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <h3>핵심: API가 뭔지만 알면 됩니다</h3>
+          <p><strong>API = 서비스끼리 대화하는 통로.</strong> Google Sheets API, Notion API, Slack API — 이 "통로"를 연결하면 자동화가 됩니다. 코드는 Claude Code가 짜주니까, 당신은 <strong>"어디서 데이터를 가져와서 어디로 보낼지"</strong>만 정하면 됩니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>이 프로젝트에서 익히는 핵심 개념</h3>
+          <ul>
+            <li><strong>API 연동</strong> — 서비스들을 코드로 연결하는 방법 (가장 실용적인 스킬)</li>
+            <li><strong>인증(OAuth/API Key)</strong> — Google, Notion 등에 접근 권한 얻기</li>
+            <li><strong>스케줄링(Cron)</strong> — "매일 오전 9시에 자동 실행" 같은 예약</li>
+            <li><strong>에러 처리</strong> — API가 실패했을 때 재시도하는 법</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number amber">5</span>
+            사업 아이템 MVP (네 번째 프로젝트)
           </div>
           <div class="detail-body">
             <p>실제로 만들고 싶은 서비스의 <strong>최소 버전</strong>을 만들어봅니다.</p>
