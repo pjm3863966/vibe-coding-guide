@@ -9,11 +9,13 @@
   <meta property="og:description" content="코딩 제로에서 AI로 사업하기까지의 실전 로드맵">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pjm3863966.github.io/vibe-coding-guide/">
-  <meta property="og:image" content="https://pjm3863966.github.io/vibe-coding-guide/images/cursor-landing.png">
+  <meta property="og:image" content="https://pjm3863966.github.io/vibe-coding-guide/images/antigravity-landing.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="바이브 코딩 가이드">
   <meta name="twitter:description" content="코딩 제로에서 AI로 사업하기까지의 실전 로드맵">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
   <link rel="canonical" href="https://pjm3863966.github.io/vibe-coding-guide/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +43,7 @@
       --blue-soft: rgba(37, 99, 235, 0.08);
       --radius: 12px;
       --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --hero-gradient-end: #7c3aed;
     }
 
     body {
@@ -99,7 +102,7 @@
     }
 
     .hero h1 span {
-      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      background: linear-gradient(135deg, var(--accent), var(--hero-gradient-end));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -569,6 +572,32 @@
       border: 1px solid var(--border);
     }
 
+    /* Mid CTA */
+    .mid-cta {
+      background: var(--accent-soft);
+      border: 1px solid rgba(79, 70, 229, 0.15);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin: 32px 0;
+    }
+    .mid-cta p {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .mid-cta .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .mid-cta .cta-btn {
+      padding: 10px 22px;
+      font-size: 13px;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -762,6 +791,100 @@
     @media (max-width: 1100px) {
       .toc-nav { display: none; }
     }
+
+    /* Mobile TOC */
+    .mobile-toc {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .mobile-toc::-webkit-scrollbar { display: none; }
+    .mobile-toc ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+    }
+    .mobile-toc a {
+      display: block;
+      padding: 14px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .mobile-toc a.active {
+      color: var(--accent);
+      font-weight: 700;
+      box-shadow: inset 0 -2px 0 var(--accent);
+    }
+    .mobile-toc a.active[data-phase="1"] { color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
+    .mobile-toc a.active[data-phase="2"] { color: var(--green); box-shadow: inset 0 -2px 0 var(--green); }
+    .mobile-toc a.active[data-phase="3"] { color: var(--amber); box-shadow: inset 0 -2px 0 var(--amber); }
+    .mobile-toc a.active[data-phase="4"] { color: var(--rose); box-shadow: inset 0 -2px 0 var(--rose); }
+    @media (max-width: 1100px) {
+      .mobile-toc { display: block; }
+      body { padding-bottom: 52px; }
+    }
+
+    /* Utility classes for dark-mode-safe inline colors */
+    .terminal-output { color: var(--text-muted); }
+    .diff-add { color: #22c55e; }
+    .diff-del { color: #ef4444; }
+
+    /* ===== Dark Mode ===== */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0a0a0a;
+        --surface: #171717;
+        --surface-hover: #262626;
+        --border: #2e2e2e;
+        --border-light: #1f1f1f;
+        --text: #ededed;
+        --text-muted: #a3a3a3;
+        --accent: #818cf8;
+        --accent-soft: rgba(129, 140, 248, 0.1);
+        --green: #4ade80;
+        --green-soft: rgba(74, 222, 128, 0.1);
+        --amber: #fbbf24;
+        --amber-soft: rgba(251, 191, 36, 0.1);
+        --rose: #fb7185;
+        --rose-soft: rgba(251, 113, 133, 0.1);
+        --blue: #60a5fa;
+        --blue-soft: rgba(96, 165, 250, 0.1);
+        --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+        --hero-gradient-end: #a78bfa;
+      }
+
+      .resource:hover {
+        box-shadow: 0 2px 8px rgba(129, 140, 248, 0.15);
+      }
+
+      .tip-box {
+        border-color: rgba(96, 165, 250, 0.25);
+      }
+
+      .mid-cta {
+        border-color: rgba(129, 140, 248, 0.25);
+      }
+
+      .screenshot img {
+        filter: brightness(0.9);
+      }
+
+      .diff-add { color: #4ade80; }
+      .diff-del { color: #fb7185; }
+    }
   </style>
 </head>
 <body>
@@ -828,11 +951,11 @@
             <div style="padding-top: 8px;">
               <div style="font-weight: 700; font-size: 17px; color: var(--green); margin-bottom: 4px;">AI 도구 숙달 <span style="font-weight: 400; font-size: 13px; color: var(--text-muted);">2~3주</span></div>
               <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Cursor</span>
+                <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Antigravity</span>
                 <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">Claude Code</span>
                 <span style="background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px;">프롬프팅</span>
               </div>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">AI에게 시키는 법을 배웁니다 (Cursor → Claude Code)</p>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">AI에게 시키는 법을 배웁니다 (Antigravity → Claude Code)</p>
             </div>
           </div>
 
@@ -890,7 +1013,7 @@
             <div style="font-size: 18px; color: var(--text-muted); padding: 0 2px;">→</div>
             <div style="flex: 1; min-width: 120px; background: var(--green-soft); border: 1px solid rgba(22,163,74,0.2); padding: 10px 14px; text-align: center;">
               <div style="font-size: 11px; color: var(--text-muted);">Phase 2 전반</div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--green);">Cursor</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--green);">Antigravity</div>
               <div style="font-size: 11px; color: var(--text-muted);">눈으로 보면서</div>
             </div>
             <div style="font-size: 18px; color: var(--text-muted); padding: 0 2px;">→</div>
@@ -1246,6 +1369,14 @@
             <li>Git commit이 "저장"이라는 걸 안다</li>
           </ul>
         </div>
+
+        <div class="mid-cta">
+          <p>기초 개념이 잡혔다면, AI 도구로 진짜 코딩을 시작해보세요</p>
+          <div class="cta-buttons">
+            <a href="https://opentutorials.org/course/3083" target="_blank" rel="noopener" class="cta-btn cta-btn-primary">생활코딩 시작하기 →</a>
+            <a href="https://antigravity.google" target="_blank" rel="noopener" class="cta-btn cta-btn-secondary">Antigravity 다운로드 →</a>
+          </div>
+        </div>
       </div>
 
       <!-- ============ Phase 2 ============ -->
@@ -1262,40 +1393,44 @@
         <div class="detail-section">
           <div class="detail-header">
             <span class="detail-number green">1</span>
-            AI 코딩 도구 — Cursor에서 시작, Claude Code로 진화
+            AI 코딩 도구 — Antigravity에서 시작, Claude Code로 진화
           </div>
           <div class="detail-body">
             <p>AI 코딩 도구는 크게 두 종류입니다. <strong>에디터형</strong>(화면에서 코드를 보면서 작업)과 <strong>터미널형</strong>(대화만으로 작업). 결론부터 말하면:</p>
 
             <div class="tip-box" style="margin: 1.5rem 0;">
-              <strong>처음 1~2주는 Cursor</strong>로 "코드가 뭔지" 눈으로 익히고 → <strong>익숙해지면 Claude Code</strong>로 전환해서 본격적으로 개발하세요.
+              <strong>처음 1~2주는 Antigravity</strong>로 "코드가 뭔지" 눈으로 익히고 → <strong>익숙해지면 Claude Code</strong>로 전환해서 본격적으로 개발하세요.
             </div>
 
-            <!-- Cursor 설명 -->
+            <!-- Antigravity 설명 -->
             <div class="learn-item">
-              <h4>🖥️ Cursor — "눈으로 보면서 배우는" 에디터</h4>
-              <p><a href="https://cursor.com" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 600; text-decoration: none;">cursor.com</a>에서 다운로드</p>
+              <h4>🖥️ Antigravity — "눈으로 보면서 배우는" Google AI 에디터</h4>
+              <p><a href="https://antigravity.google" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 600; text-decoration: none;">antigravity.google</a>에서 다운로드</p>
             </div>
 
             <div class="screenshot" style="margin: 1rem 0;">
-              <img src="images/cursor-landing.png" alt="Cursor 공식 사이트 — AI가 내장된 에디터" width="1280" height="900" loading="lazy">
-              <div class="screenshot-caption">Cursor — VS Code와 똑같이 생겼지만 AI가 내장되어 있습니다. 왼쪽에 파일 목록, 가운데 코드, 오른쪽에 AI 채팅.</div>
+              <picture>
+                <source srcset="images/antigravity-landing.webp" type="image/webp">
+                <img src="images/antigravity-landing.png" alt="Google Antigravity 공식 사이트 — AI가 내장된 차세대 에디터" width="1280" height="900" loading="lazy">
+              </picture>
+              <div class="screenshot-caption">Google Antigravity — VS Code 기반이지만 AI 에이전트가 내장된 차세대 IDE. 에디터 모드와 매니저 모드 두 가지로 작업합니다.</div>
             </div>
 
-            <p><strong>Cursor가 처음에 좋은 이유:</strong></p>
+            <p><strong>Antigravity가 처음에 좋은 이유:</strong></p>
             <ul style="margin: 0.8rem 0; padding-left: 1.5rem; line-height: 2;">
               <li><strong>코드가 어디에 있는지 보입니다</strong> — 폴더 구조, 파일 이름, 코드 줄 번호가 다 화면에 있어요</li>
               <li><strong>AI가 수정하는 부분이 하이라이트됩니다</strong> — "여기를 이렇게 바꿨어요"가 초록색/빨간색으로 표시돼요</li>
-              <li><strong>한 번에 하나의 파일을 봅니다</strong> — 초보자에게 딱 맞는 속도감이에요</li>
+              <li><strong>AI 에이전트가 알아서 작업합니다</strong> — 매니저 모드에서 여러 에이전트가 동시에 일해요</li>
               <li><strong>VS Code 익스텐션을 그대로 씁니다</strong> — 나중에 VS Code를 쓸 일이 있으면 바로 적응돼요</li>
+              <li><strong>개인 사용자 무료</strong> — Google 계정만 있으면 바로 시작할 수 있어요</li>
             </ul>
 
             <div class="prompt-example" style="margin: 1.2rem 0;">
-              <div class="prompt-label">Cursor에서 작업하는 모습</div>
+              <div class="prompt-label">Antigravity에서 작업하는 모습</div>
               <div class="prompt-content">
-                <p style="margin-bottom:0.5rem;">1. 에디터에서 Cmd+K (또는 Ctrl+K) 누르기</p>
+                <p style="margin-bottom:0.5rem;">1. 에디터에서 Cmd+I (또는 Ctrl+I) 누르기</p>
                 <p style="margin-bottom:0.5rem;">2. "이 버튼 클릭하면 알림이 뜨게 해줘" 라고 입력</p>
-                <p style="margin-bottom:0.5rem;">3. AI가 코드를 <span style="color:#22c55e;">초록색으로 추가</span>하고 <span style="color:#ef4444;">빨간색으로 삭제</span>한 부분을 보여줌</p>
+                <p style="margin-bottom:0.5rem;">3. AI가 코드를 <span class="diff-add">초록색으로 추가</span>하고 <span class="diff-del">빨간색으로 삭제</span>한 부분을 보여줌</p>
                 <p style="margin-bottom:0;">4. "Accept" 버튼 누르면 적용 완료!</p>
               </div>
             </div>
@@ -1307,7 +1442,10 @@
             </div>
 
             <div class="screenshot" style="margin: 1rem 0;">
-              <img src="images/claude-code-landing.png" alt="Claude Code 공식 문서 — 터미널 기반 AI 코딩 도구" width="1280" height="900" loading="lazy">
+              <picture>
+                <source srcset="images/claude-code-landing.webp" type="image/webp">
+                <img src="images/claude-code-landing.png" alt="Claude Code 공식 문서 — 터미널 기반 AI 코딩 도구" width="1280" height="900" loading="lazy">
+              </picture>
               <div class="screenshot-caption">Claude Code 공식 문서. Terminal, VS Code, Desktop 등 다양한 환경에서 쓸 수 있습니다.</div>
             </div>
 
@@ -1323,14 +1461,14 @@
             <div class="prompt-example" style="margin: 1.2rem 0;">
               <div class="prompt-label">Claude Code에서 작업하는 모습</div>
               <div class="prompt-content">
-                <p style="margin-bottom:0.5rem; color: #64748b;">$ claude</p>
+                <p class="terminal-output" style="margin-bottom:0.5rem;">$ claude</p>
                 <p style="margin-bottom:0.5rem;"><strong>나:</strong> 회원가입 페이지 만들어줘. 이메일이랑 비밀번호 입력하면 되게.</p>
-                <p style="margin-bottom:0.5rem; color: #64748b;">Claude: 네, 회원가입 페이지를 만들겠습니다.</p>
-                <p style="margin-bottom:0.5rem; color: #64748b;">→ src/app/signup/page.tsx 생성</p>
-                <p style="margin-bottom:0.5rem; color: #64748b;">→ src/app/api/auth/signup/route.ts 생성</p>
-                <p style="margin-bottom:0.5rem; color: #64748b;">→ 데이터베이스 마이그레이션 파일 생성</p>
-                <p style="margin-bottom:0.5rem; color: #64748b;">→ npm run test 실행... ✅ 모든 테스트 통과</p>
-                <p style="margin-bottom:0; color: #64748b;">→ 완료! http://localhost:3000/signup 에서 확인하세요.</p>
+                <p class="terminal-output" style="margin-bottom:0.5rem;">Claude: 네, 회원가입 페이지를 만들겠습니다.</p>
+                <p class="terminal-output" style="margin-bottom:0.5rem;">→ src/app/signup/page.tsx 생성</p>
+                <p class="terminal-output" style="margin-bottom:0.5rem;">→ src/app/api/auth/signup/route.ts 생성</p>
+                <p class="terminal-output" style="margin-bottom:0.5rem;">→ 데이터베이스 마이그레이션 파일 생성</p>
+                <p class="terminal-output" style="margin-bottom:0.5rem;">→ npm run test 실행... ✅ 모든 테스트 통과</p>
+                <p class="terminal-output" style="margin-bottom:0;">→ 완료! http://localhost:3000/signup 에서 확인하세요.</p>
               </div>
             </div>
 
@@ -1340,7 +1478,7 @@
               <thead>
                 <tr>
                   <th style="width:30%;">비교 항목</th>
-                  <th style="width:35%;">Cursor</th>
+                  <th style="width:35%;">Antigravity</th>
                   <th style="width:35%;">Claude Code</th>
                 </tr>
               </thead>
@@ -1382,7 +1520,7 @@
                 </tr>
                 <tr>
                   <td><strong>가격</strong></td>
-                  <td>무료 플랜 있음 (월 $20 Pro)</td>
+                  <td>개인 무료 (팀은 유료)</td>
                   <td>Pro $20 (제한적) / Max $100 (무제한)</td>
                 </tr>
               </tbody>
@@ -1394,14 +1532,14 @@
             <p>아래 체크리스트 중 <strong>3개 이상</strong>에 해당하면 전환할 때입니다:</p>
             <ul style="margin: 0.8rem 0; padding-left: 1.5rem; line-height: 2;">
               <li>☑️ 파일이 어디에 있는지 대충 감이 온다 (src/app, src/components 등)</li>
-              <li>☑️ Cursor에서 "이것도 저것도 바꿔줘" 하다가 파일을 하나하나 여는 게 귀찮다</li>
+              <li>☑️ Antigravity에서 "이것도 저것도 바꿔줘" 하다가 파일을 하나하나 여는 게 귀찮다</li>
               <li>☑️ <code>npm run dev</code>, <code>git commit</code> 같은 터미널 명령이 뭔지 안다</li>
               <li>☑️ 한 기능에 파일이 3개 이상 필요하다는 걸 느꼈다</li>
               <li>☑️ "AI가 전체 프로젝트를 이해하면 좋겠다"고 느꼈다</li>
             </ul>
 
             <div class="tip-box" style="margin: 1.5rem 0;">
-              <strong>💡 꿀팁:</strong> 둘 다 쓰는 것도 좋은 전략입니다! Claude Code로 큰 기능을 만들고, Cursor로 세부 디자인을 조정하는 식으로 섞어 쓰는 사람도 많습니다. Claude Code는 VS Code 안에서도 쓸 수 있어요 (확장 프로그램 설치).
+              <strong>💡 꿀팁:</strong> 둘 다 쓰는 것도 좋은 전략입니다! Claude Code로 큰 기능을 만들고, Antigravity로 세부 디자인을 조정하는 식으로 섞어 쓰는 사람도 많습니다. Claude Code는 VS Code 안에서도 쓸 수 있어요 (확장 프로그램 설치).
             </div>
           </div>
         </div>
@@ -1553,7 +1691,10 @@
 
         <!-- 영어 문서 스크린샷 예시 -->
         <div class="screenshot">
-          <img src="images/docs-english.png" alt="Claude Code 공식 문서 — 영어 원본" width="1280" height="800" loading="lazy">
+          <picture>
+            <source srcset="images/docs-english.webp" type="image/webp">
+            <img src="images/docs-english.png" alt="Claude Code 공식 문서 — 영어 원본" width="1280" height="800" loading="lazy">
+          </picture>
           <div class="screenshot-caption">Claude Code 공식 문서 화면. 영어지만 걱정 마세요 — 아래 방법으로 바로 한국어로 볼 수 있습니다.</div>
         </div>
 
@@ -1677,9 +1818,17 @@
             <li>AI에게 "로그인 페이지 만들어줘" 같은 지시를 내릴 수 있다</li>
             <li>에러가 나면 에러 메시지를 AI한테 붙여넣어서 해결할 수 있다</li>
             <li>파일이 어디에 있는지 (src/app, src/components 등) 감이 온다</li>
-            <li>Cursor 또는 Claude Code를 설치해서 실제로 코드를 만들어 봤다</li>
+            <li>Antigravity 또는 Claude Code를 설치해서 실제로 코드를 만들어 봤다</li>
             <li>npm이 뭔지, git commit이 뭔지 설명할 수 있다</li>
           </ul>
+        </div>
+
+        <div class="mid-cta">
+          <p>AI 도구가 손에 익었다면, 첫 프로젝트를 만들어보세요</p>
+          <div class="cta-buttons">
+            <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener" class="cta-btn cta-btn-primary">Claude Code 시작하기 →</a>
+            <a href="https://nextjs.org/learn" target="_blank" rel="noopener" class="cta-btn cta-btn-secondary">Next.js 튜토리얼 →</a>
+          </div>
         </div>
       </div>
 
@@ -1732,7 +1881,10 @@
 
         <!-- Next.js 스크린샷 -->
         <div class="screenshot">
-          <img src="images/nextjs-tutorial.png" alt="Next.js 공식 튜토리얼 페이지" width="1280" height="800" loading="lazy">
+          <picture>
+            <source srcset="images/nextjs-tutorial.webp" type="image/webp">
+            <img src="images/nextjs-tutorial.png" alt="Next.js 공식 튜토리얼 페이지" width="1280" height="800" loading="lazy">
+          </picture>
           <div class="screenshot-caption">Next.js 공식 튜토리얼. 16개 챕터 중 필수 8개만 보면 됩니다. Chrome 우클릭으로 한국어 번역하세요.</div>
         </div>
 
@@ -2146,6 +2298,20 @@
     </div>
   </footer>
 
+  <!-- Mobile TOC (bottom fixed) -->
+  <nav class="mobile-toc" id="mobile-toc" aria-label="모바일 목차">
+    <ul>
+      <li><a href="#hero">맨 위</a></li>
+      <li><a href="#intro">소개</a></li>
+      <li><a href="#overview">흐름</a></li>
+      <li><a href="#ai-learning">AI학습</a></li>
+      <li><a href="#phase1" data-phase="1">P1·기초</a></li>
+      <li><a href="#phase2" data-phase="2">P2·도구</a></li>
+      <li><a href="#phase3" data-phase="3">P3·프로젝트</a></li>
+      <li><a href="#phase4" data-phase="4">P4·사업</a></li>
+    </ul>
+  </nav>
+
   <!-- TOC Side Navigation -->
   <nav class="toc-nav" id="toc" aria-label="목차 네비게이션">
     <a href="#hero"><span class="toc-dot"></span>맨 위로</a>
@@ -2161,6 +2327,8 @@
   <script>
     // Scroll Spy
     const tocLinks = document.querySelectorAll('.toc-nav a');
+    const mobileTocLinks = document.querySelectorAll('.mobile-toc a');
+    const mobileTocNav = document.getElementById('mobile-toc');
     const sections = Array.from(tocLinks).map(link => {
       const id = link.getAttribute('href').slice(1);
       return document.getElementById(id);
@@ -2181,10 +2349,19 @@
         const href = link.getAttribute('href').slice(1);
         link.classList.toggle('active', href === current);
       });
+
+      mobileTocLinks.forEach(link => {
+        const href = link.getAttribute('href').slice(1);
+        const isActive = href === current;
+        link.classList.toggle('active', isActive);
+        if (isActive && mobileTocNav) {
+          link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      });
     }
 
-    // Smooth scroll
-    tocLinks.forEach(link => {
+    // Smooth scroll for both navs
+    [...tocLinks, ...mobileTocLinks].forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(link.getAttribute('href'));
