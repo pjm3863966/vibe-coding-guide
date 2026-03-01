@@ -684,13 +684,33 @@
         <!-- 생활코딩 상세 -->
         <div class="card">
           <h3>생활코딩에서 뭘 배워야 하나요?</h3>
-          <p>생활코딩(opentutorials.org)은 한국어 무료 강의 중 입문자에게 가장 좋습니다. <strong>전부 다 볼 필요 없습니다.</strong> 아래 순서대로만 보세요.</p>
+          <p>생활코딩(<a href="https://opentutorials.org/course/1" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">opentutorials.org</a>)에는 WEB, DB, 언어, 서버, 데이터과학, Git 등 <strong>수십 개 강좌</strong>가 있습니다. 전부 볼 필요 절대 없습니다. 아래 6개만 순서대로 보세요.</p>
+        </div>
+
+        <!-- 커리큘럼 요약 테이블 -->
+        <div class="card">
+          <h3>추천 학습 경로 한눈에 보기</h3>
+          <table class="info-table">
+            <thead>
+              <tr><th>순서</th><th>강좌</th><th>핵심</th><th>소요 시간</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>WEB1 — HTML</td><td>웹페이지 구조</td><td>1일</td></tr>
+              <tr><td>2</td><td>WEB2 — CSS</td><td>스타일링, 레이아웃</td><td>2-3일</td></tr>
+              <tr><td>3</td><td>WEB2 — JavaScript</td><td>변수, 조건문, 함수</td><td>3-4일</td></tr>
+              <tr><td>4</td><td>DATABASE1</td><td>DB 개념 잡기</td><td>반나절</td></tr>
+              <tr><td>5</td><td>MySQL</td><td>CRUD 쿼리 기초</td><td>1-2일</td></tr>
+              <tr><td>6</td><td>GIT1</td><td>버전 관리 기초</td><td>1일</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">총 약 <strong style="color: var(--text);">10일 ~ 2주</strong>면 충분합니다.</p>
         </div>
 
         <div class="detail-section">
           <div class="detail-header">
             <span class="detail-number purple">1</span>
-            WEB1 — HTML &amp; Internet
+            <a href="https://opentutorials.org/course/3084" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">WEB1 — HTML &amp; Internet</a>
+            <span class="tag tag-good" style="margin-left: auto;">1일</span>
           </div>
           <div class="detail-body">
             <p>웹페이지가 어떻게 만들어지는지 배웁니다. <strong>모든 웹 서비스의 기초</strong>입니다.</p>
@@ -712,7 +732,8 @@
         <div class="detail-section">
           <div class="detail-header">
             <span class="detail-number purple">2</span>
-            WEB2 — CSS
+            <a href="https://opentutorials.org/course/3086" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">WEB2 — CSS</a>
+            <span class="tag tag-good" style="margin-left: auto;">2-3일</span>
           </div>
           <div class="detail-body">
             <p>웹페이지를 <strong>예쁘게 꾸미는 법</strong>을 배웁니다. 색상, 크기, 배치 등.</p>
@@ -734,7 +755,8 @@
         <div class="detail-section">
           <div class="detail-header">
             <span class="detail-number purple">3</span>
-            WEB2 — JavaScript
+            <a href="https://opentutorials.org/course/3085" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">WEB2 — JavaScript</a>
+            <span class="tag tag-good" style="margin-left: auto;">3-4일</span>
           </div>
           <div class="detail-body">
             <p>웹페이지에 <strong>동작을 추가하는 법</strong>을 배웁니다. 버튼 클릭, 데이터 처리 등.</p>
@@ -757,7 +779,32 @@
         <div class="detail-section">
           <div class="detail-header">
             <span class="detail-number purple">4</span>
-            Git (버전 관리)
+            <a href="https://opentutorials.org/course/3162" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">DATABASE1</a> +
+            <a href="https://opentutorials.org/course/3161" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">MySQL</a>
+            <span class="tag tag-good" style="margin-left: auto;">1-2일</span>
+          </div>
+          <div class="detail-body">
+            <p>데이터를 <strong>저장하고 꺼내 쓰는 창고</strong>입니다. 회원 정보, 게시글, 주문 내역 — 전부 데이터베이스에 저장됩니다.</p>
+            <div class="learn-item">
+              <h4>배우는 것</h4>
+              <p><strong>DATABASE1</strong>으로 "DB가 뭔지" 개념을 잡고 (반나절), <strong>MySQL</strong>에서 실제 명령어를 배웁니다.</p>
+            </div>
+            <div class="learn-item">
+              <h4>왜 필요한지</h4>
+              <p>"회원가입 기능 만들어줘"라고 시키면 AI가 데이터베이스 코드를 씁니다. 이때 <strong>"사용자 정보가 users 테이블에 저장되는 거구나"</strong> 정도는 알아야 문제가 생겼을 때 AI한테 정확히 설명할 수 있습니다.</p>
+            </div>
+            <div class="learn-item">
+              <h4>어디까지 보면 되나요</h4>
+              <p>SELECT, INSERT, UPDATE, DELETE 네 가지 명령어 개념만 잡으세요. <strong>Oracle, SQLite는 안 봐도 됩니다.</strong> 실제 쿼리는 AI가 써줍니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="detail-header">
+            <span class="detail-number purple">5</span>
+            <a href="https://opentutorials.org/course/3370" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">GIT1</a> (버전 관리)
+            <span class="tag tag-good" style="margin-left: auto;">1일</span>
           </div>
           <div class="detail-body">
             <p>코드의 <strong>변경 이력을 관리하는 도구</strong>입니다. "세이브 포인트"라고 생각하면 됩니다.</p>
@@ -770,62 +817,64 @@
               <p>AI가 코드를 잘못 고쳐서 사이트가 망가졌을 때, Git이 있으면 <strong>이전 상태로 바로 되돌릴 수 있습니다.</strong> 없으면 처음부터 다시 만들어야 합니다.</p>
             </div>
             <div class="learn-item">
-              <h4>추천</h4>
-              <p>생활코딩 Git 수업을 보거나, GitHub Desktop 앱을 설치하면 클릭만으로 할 수 있습니다.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="detail-section">
-          <div class="detail-header">
-            <span class="detail-number purple">5</span>
-            데이터베이스 기초
-          </div>
-          <div class="detail-body">
-            <p>데이터를 <strong>저장하고 꺼내 쓰는 창고</strong>입니다. 회원 정보, 게시글, 주문 내역 — 전부 데이터베이스에 저장됩니다.</p>
-            <div class="learn-item">
-              <h4>배우는 것</h4>
-              <p>테이블(표)에 데이터 넣기, 꺼내기, 수정하기, 삭제하기 (SQL 기초)</p>
-            </div>
-            <div class="learn-item">
-              <h4>왜 필요한지</h4>
-              <p>"회원가입 기능 만들어줘"라고 시키면 AI가 데이터베이스 코드를 씁니다. 이때 <strong>"사용자 정보가 users 테이블에 저장되는 거구나"</strong> 정도는 알아야 문제가 생겼을 때 AI한테 정확히 설명할 수 있습니다.</p>
-            </div>
-            <div class="learn-item">
               <h4>어디까지 보면 되나요</h4>
-              <p>생활코딩 "데이터베이스" 수업에서 <strong>MySQL 기초</strong>만 보면 됩니다. SELECT, INSERT, UPDATE, DELETE 네 가지 명령어 개념만 잡으세요. 실제 쿼리는 AI가 써줍니다.</p>
+              <p><strong>GIT1만 보면 됩니다.</strong> GIT CLI의 Branch, Cherry-pick 같은 심화 내용은 건너뛰세요. GitHub Desktop 앱을 쓰면 클릭만으로 할 수 있습니다.</p>
             </div>
           </div>
         </div>
 
         <div class="card">
-          <h3>이 단계에서 하지 말아야 할 것</h3>
+          <h3>생활코딩에서 건너뛸 것</h3>
+          <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">생활코딩에는 강좌가 매우 많지만, 바이브 코딩 목적이라면 아래는 <strong style="color: var(--text);">지금 안 봐도 됩니다:</strong></p>
           <ul>
-            <li><strong>코딩 문제 풀기</strong> — 알고리즘 문제는 바이브 코딩에 불필요</li>
-            <li><strong>프레임워크 공부</strong> — React, Next.js는 아직 안 봐도 됨</li>
-            <li><strong>완벽히 이해하려고 하기</strong> — 70% 이해하면 다음 단계로</li>
+            <li><strong>WEB2 — Node.js / PHP / Python</strong> — 백엔드 직접 코딩 (AI가 해줌)</li>
+            <li><strong>Java, PHP 언어 강좌</strong> — 바이브 코딩에 불필요</li>
+            <li><strong>Oracle, SQLite, lowdb</strong> — MySQL만 알면 충분</li>
+            <li><strong>AWS, Docker, 리눅스</strong> — 나중에 스케일링할 때</li>
+            <li><strong>머신러닝, TensorFlow</strong> — 별개 분야</li>
+            <li><strong>알고리즘</strong> — 바이브 코딩에 불필요</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>나중에 필요할 때 보면 좋은 것</h3>
+          <ul>
+            <li><strong>WEB2 — Node.js</strong> — Next.js 프로젝트 하다가 서버 개념이 궁금할 때</li>
+            <li><strong>HTTP</strong> — API 연동할 때 GET/POST 개념이 필요하면</li>
+            <li><strong>OAuth 2.0</strong> — 소셜 로그인(구글, 카카오) 구현할 때</li>
+            <li><strong>GIT CLI — Branch &amp; 협업</strong> — 팀으로 개발하게 되면</li>
           </ul>
         </div>
 
         <div class="resources">
           <a class="resource" href="https://opentutorials.org/course/3084" target="_blank" rel="noopener">
-            <div class="resource-name">생활코딩 WEB1</div>
-            <div class="resource-desc">HTML 기초 (하루면 끝)</div>
+            <div class="resource-name">WEB1 — HTML</div>
+            <div class="resource-desc">웹페이지 구조 (1일)</div>
             <div class="resource-tag">무료 · 한국어</div>
           </a>
           <a class="resource" href="https://opentutorials.org/course/3086" target="_blank" rel="noopener">
-            <div class="resource-name">생활코딩 WEB2 CSS</div>
-            <div class="resource-desc">꾸미기 (2-3일)</div>
+            <div class="resource-name">WEB2 — CSS</div>
+            <div class="resource-desc">스타일링 (2-3일)</div>
+            <div class="resource-tag">무료 · 한국어</div>
+          </a>
+          <a class="resource" href="https://opentutorials.org/course/3085" target="_blank" rel="noopener">
+            <div class="resource-name">WEB2 — JavaScript</div>
+            <div class="resource-desc">동작 추가 (3-4일)</div>
+            <div class="resource-tag">무료 · 한국어</div>
+          </a>
+          <a class="resource" href="https://opentutorials.org/course/3162" target="_blank" rel="noopener">
+            <div class="resource-name">DATABASE1</div>
+            <div class="resource-desc">DB 개념 (반나절)</div>
             <div class="resource-tag">무료 · 한국어</div>
           </a>
           <a class="resource" href="https://opentutorials.org/course/3161" target="_blank" rel="noopener">
-            <div class="resource-name">생활코딩 DB</div>
-            <div class="resource-desc">MySQL 기초</div>
+            <div class="resource-name">MySQL</div>
+            <div class="resource-desc">SQL 기초 (1-2일)</div>
             <div class="resource-tag">무료 · 한국어</div>
           </a>
           <a class="resource" href="https://opentutorials.org/course/3370" target="_blank" rel="noopener">
-            <div class="resource-name">생활코딩 Git</div>
-            <div class="resource-desc">버전 관리 기초</div>
+            <div class="resource-name">GIT1</div>
+            <div class="resource-desc">버전 관리 (1일)</div>
             <div class="resource-tag">무료 · 한국어</div>
           </a>
         </div>
