@@ -1001,16 +1001,145 @@
         <div class="detail-section">
           <div class="detail-header">
             <span class="detail-number green">1</span>
-            AI 도구 설치하고 써보기
+            AI 코딩 도구 — Cursor에서 시작, Claude Code로 진화
           </div>
           <div class="detail-body">
-            <div class="learn-item">
-              <h4>Cursor (에디터 기반) — 처음 시작에 추천</h4>
-              <p>VS Code와 비슷한 에디터인데, AI가 내장되어 있습니다. 화면이 있어서 직관적이고, 코드가 어디에 만들어지는지 바로 볼 수 있습니다.</p>
+            <p>AI 코딩 도구는 크게 두 종류입니다. <strong>에디터형</strong>(화면에서 코드를 보면서 작업)과 <strong>터미널형</strong>(대화만으로 작업). 결론부터 말하면:</p>
+
+            <div class="tip-box" style="margin: 1.5rem 0;">
+              <strong>처음 1~2주는 Cursor</strong>로 "코드가 뭔지" 눈으로 익히고 → <strong>익숙해지면 Claude Code</strong>로 전환해서 본격적으로 개발하세요.
             </div>
+
+            <!-- Cursor 설명 -->
             <div class="learn-item">
-              <h4>Claude Code (터미널 기반) — 익숙해지면 전환</h4>
-              <p>터미널에서 AI와 대화하며 코드를 만듭니다. 파일 수정, 테스트 실행, Git까지 AI가 직접 합니다. 가장 강력한 도구입니다.</p>
+              <h4>🖥️ Cursor — "눈으로 보면서 배우는" 에디터</h4>
+              <p><a href="https://cursor.com" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 600; text-decoration: none;">cursor.com</a>에서 다운로드</p>
+            </div>
+
+            <div class="screenshot" style="margin: 1rem 0;">
+              <img src="images/cursor-landing.png" alt="Cursor 공식 사이트 — AI가 내장된 에디터">
+              <div class="screenshot-caption">Cursor — VS Code와 똑같이 생겼지만 AI가 내장되어 있습니다. 왼쪽에 파일 목록, 가운데 코드, 오른쪽에 AI 채팅.</div>
+            </div>
+
+            <p><strong>Cursor가 처음에 좋은 이유:</strong></p>
+            <ul style="margin: 0.8rem 0; padding-left: 1.5rem; line-height: 2;">
+              <li><strong>코드가 어디에 있는지 보입니다</strong> — 폴더 구조, 파일 이름, 코드 줄 번호가 다 화면에 있어요</li>
+              <li><strong>AI가 수정하는 부분이 하이라이트됩니다</strong> — "여기를 이렇게 바꿨어요"가 초록색/빨간색으로 표시돼요</li>
+              <li><strong>한 번에 하나의 파일을 봅니다</strong> — 초보자에게 딱 맞는 속도감이에요</li>
+              <li><strong>VS Code 익스텐션을 그대로 씁니다</strong> — 나중에 VS Code를 쓸 일이 있으면 바로 적응돼요</li>
+            </ul>
+
+            <div class="prompt-example" style="margin: 1.2rem 0;">
+              <div class="prompt-label">Cursor에서 작업하는 모습</div>
+              <div class="prompt-content">
+                <p style="margin-bottom:0.5rem;">1. 에디터에서 Cmd+K (또는 Ctrl+K) 누르기</p>
+                <p style="margin-bottom:0.5rem;">2. "이 버튼 클릭하면 알림이 뜨게 해줘" 라고 입력</p>
+                <p style="margin-bottom:0.5rem;">3. AI가 코드를 <span style="color:#22c55e;">초록색으로 추가</span>하고 <span style="color:#ef4444;">빨간색으로 삭제</span>한 부분을 보여줌</p>
+                <p style="margin-bottom:0;">4. "Accept" 버튼 누르면 적용 완료!</p>
+              </div>
+            </div>
+
+            <!-- Claude Code 설명 -->
+            <div class="learn-item" style="margin-top: 2rem;">
+              <h4>⌨️ Claude Code — "말만 하면 다 해주는" 터미널 AI</h4>
+              <p><a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 600; text-decoration: none;">docs.anthropic.com/en/docs/claude-code</a>에서 설치 방법 확인</p>
+            </div>
+
+            <div class="screenshot" style="margin: 1rem 0;">
+              <img src="images/claude-code-landing.png" alt="Claude Code 공식 문서 — 터미널 기반 AI 코딩 도구">
+              <div class="screenshot-caption">Claude Code 공식 문서. Terminal, VS Code, Desktop 등 다양한 환경에서 쓸 수 있습니다.</div>
+            </div>
+
+            <p><strong>Claude Code가 결국 더 강력한 이유:</strong></p>
+            <ul style="margin: 0.8rem 0; padding-left: 1.5rem; line-height: 2;">
+              <li><strong>파일 10개를 동시에 수정합니다</strong> — "로그인 기능 만들어줘" 하면 API, 화면, DB를 한번에 만들어요</li>
+              <li><strong>터미널 명령도 직접 실행합니다</strong> — 패키지 설치, 테스트 실행, Git 커밋까지 AI가 알아서 합니다</li>
+              <li><strong>프로젝트 전체를 이해합니다</strong> — 수백 개 파일을 읽고 맥락을 파악한 후 작업해요</li>
+              <li><strong>실수를 스스로 고칩니다</strong> — 에러가 나면 로그를 보고 자동으로 수정합니다</li>
+              <li><strong>에이전트 모드</strong> — "이 버그 찾아서 고쳐줘"만 하면 파일 탐색→원인 분석→수정→테스트까지 혼자 합니다</li>
+            </ul>
+
+            <div class="prompt-example" style="margin: 1.2rem 0;">
+              <div class="prompt-label">Claude Code에서 작업하는 모습</div>
+              <div class="prompt-content">
+                <p style="margin-bottom:0.5rem; color: #64748b;">$ claude</p>
+                <p style="margin-bottom:0.5rem;"><strong>나:</strong> 회원가입 페이지 만들어줘. 이메일이랑 비밀번호 입력하면 되게.</p>
+                <p style="margin-bottom:0.5rem; color: #64748b;">Claude: 네, 회원가입 페이지를 만들겠습니다.</p>
+                <p style="margin-bottom:0.5rem; color: #64748b;">→ src/app/signup/page.tsx 생성</p>
+                <p style="margin-bottom:0.5rem; color: #64748b;">→ src/app/api/auth/signup/route.ts 생성</p>
+                <p style="margin-bottom:0.5rem; color: #64748b;">→ 데이터베이스 마이그레이션 파일 생성</p>
+                <p style="margin-bottom:0.5rem; color: #64748b;">→ npm run test 실행... ✅ 모든 테스트 통과</p>
+                <p style="margin-bottom:0; color: #64748b;">→ 완료! http://localhost:3000/signup 에서 확인하세요.</p>
+              </div>
+            </div>
+
+            <!-- 비교 테이블 -->
+            <h4 style="margin-top: 2rem; margin-bottom: 1rem;">한눈에 비교</h4>
+            <table class="info-table">
+              <thead>
+                <tr>
+                  <th style="width:30%;">비교 항목</th>
+                  <th style="width:35%;">Cursor</th>
+                  <th style="width:35%;">Claude Code</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>작업 방식</strong></td>
+                  <td>화면에서 코드를 보며 AI와 대화</td>
+                  <td>터미널에서 말만 하면 AI가 알아서</td>
+                </tr>
+                <tr>
+                  <td><strong>코드 이해</strong></td>
+                  <td>현재 열린 파일 위주로 이해</td>
+                  <td>프로젝트 전체 수백 개 파일을 파악</td>
+                </tr>
+                <tr>
+                  <td><strong>한 번에 수정</strong></td>
+                  <td>1~2개 파일</td>
+                  <td>10개 이상 파일 동시 수정</td>
+                </tr>
+                <tr>
+                  <td><strong>터미널 작업</strong></td>
+                  <td>직접 명령어 입력해야 함</td>
+                  <td>AI가 설치·테스트·배포까지 실행</td>
+                </tr>
+                <tr>
+                  <td><strong>에러 해결</strong></td>
+                  <td>에러 메시지를 복사해서 물어봐야 함</td>
+                  <td>에러를 보고 자동으로 고침</td>
+                </tr>
+                <tr>
+                  <td><strong>학습 효과</strong></td>
+                  <td>코드 구조를 눈으로 익힐 수 있음 ✅</td>
+                  <td>빠르게 결과물을 만들 수 있음 ✅</td>
+                </tr>
+                <tr>
+                  <td><strong>난이도</strong></td>
+                  <td>⭐ 쉬움 (클릭 위주)</td>
+                  <td>⭐⭐ 보통 (명령어 기반)</td>
+                </tr>
+                <tr>
+                  <td><strong>가격</strong></td>
+                  <td>무료 플랜 있음 (월 $20 Pro)</td>
+                  <td>Claude Max 구독 필요 (월 $100~)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- 전환 타이밍 -->
+            <h4 style="margin-top: 2rem; margin-bottom: 1rem;">언제 Claude Code로 전환하나요?</h4>
+            <p>아래 체크리스트 중 <strong>3개 이상</strong>에 해당하면 전환할 때입니다:</p>
+            <ul style="margin: 0.8rem 0; padding-left: 1.5rem; line-height: 2;">
+              <li>☑️ 파일이 어디에 있는지 대충 감이 온다 (src/app, src/components 등)</li>
+              <li>☑️ Cursor에서 "이것도 저것도 바꿔줘" 하다가 파일을 하나하나 여는 게 귀찮다</li>
+              <li>☑️ <code>npm run dev</code>, <code>git commit</code> 같은 터미널 명령이 뭔지 안다</li>
+              <li>☑️ 한 기능에 파일이 3개 이상 필요하다는 걸 느꼈다</li>
+              <li>☑️ "AI가 전체 프로젝트를 이해하면 좋겠다"고 느꼈다</li>
+            </ul>
+
+            <div class="tip-box" style="margin: 1.5rem 0;">
+              <strong>💡 꿀팁:</strong> 둘 다 쓰는 것도 좋은 전략입니다! Claude Code로 큰 기능을 만들고, Cursor로 세부 디자인을 조정하는 식으로 섞어 쓰는 사람도 많습니다. Claude Code는 VS Code 안에서도 쓸 수 있어요 (확장 프로그램 설치).
             </div>
           </div>
         </div>
