@@ -647,6 +647,72 @@
       .steps-visual { flex-direction: column; }
       .step-arrow { justify-content: center; transform: rotate(90deg); }
     }
+
+    /* TOC Navigation */
+    .toc-nav {
+      position: fixed;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .toc-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 12px 6px 8px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      border-left: 2px solid transparent;
+    }
+
+    .toc-nav a:hover {
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .toc-nav a.active {
+      color: var(--accent);
+      font-weight: 600;
+      background: var(--accent-soft);
+      border-left-color: var(--accent);
+    }
+
+    .toc-nav a.active[data-phase="1"] { color: var(--accent); background: var(--accent-soft); border-left-color: var(--accent); }
+    .toc-nav a.active[data-phase="2"] { color: var(--green); background: var(--green-soft); border-left-color: var(--green); }
+    .toc-nav a.active[data-phase="3"] { color: var(--amber); background: var(--amber-soft); border-left-color: var(--amber); }
+    .toc-nav a.active[data-phase="4"] { color: var(--rose); background: var(--rose-soft); border-left-color: var(--rose); }
+
+    .toc-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .toc-nav a.active .toc-dot {
+      width: 8px;
+      height: 8px;
+      background: currentColor;
+    }
+
+    /* Hide TOC on narrow screens */
+    @media (max-width: 1100px) {
+      .toc-nav { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -661,7 +727,7 @@
     </section>
 
     <!-- Intro -->
-    <section class="intro">
+    <section id="intro" class="intro">
       <h2>바이브 코딩이 뭔가요?</h2>
       <p>바이브 코딩(Vibe Coding)은 <strong>AI에게 자연어로 설명하면 코드를 만들어주는 방식</strong>입니다. 직접 코드를 한 줄 한 줄 치는 게 아니라, "로그인 페이지 만들어줘"처럼 말하면 AI가 코드를 생성합니다.</p>
       <p>하지만 <strong>"코딩을 전혀 몰라도 된다"는 건 반쯤만 맞습니다.</strong> AI가 만든 결과물을 확인하고, 문제가 생겼을 때 어디가 잘못됐는지 파악하려면 기초 지식이 필요합니다.</p>
@@ -669,7 +735,7 @@
     </section>
 
     <!-- AI-Native 학습법 -->
-    <section class="ai-learning" style="margin-bottom: 48px;">
+    <section id="ai-learning" class="ai-learning" style="margin-bottom: 48px;">
       <h2 style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px;">AI와 대화하면서 배우는 법</h2>
       <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 24px;">이 가이드의 모든 학습은 <strong style="color: var(--text);">AI와 대화하면서</strong> 진행합니다. 교재를 읽고 외우는 방식이 아닙니다.</p>
 
@@ -775,7 +841,7 @@
     </section>
 
     <!-- 전체 학습 흐름 다이어그램 -->
-    <section style="margin-bottom: 48px;">
+    <section id="overview" style="margin-bottom: 48px;">
       <h2 style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px;">전체 학습 흐름</h2>
       <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 24px;">4단계를 순서대로 따라가면 됩니다. 각 단계는 이전 단계 위에 쌓입니다.</p>
 
@@ -934,7 +1000,7 @@
     <section class="timeline">
 
       <!-- ============ Phase 1 ============ -->
-      <div class="phase">
+      <div id="phase1" class="phase">
         <div class="phase-dot"></div>
         <div class="phase-label">Phase 1</div>
         <h2>기초 체력 기르기</h2>
@@ -1144,7 +1210,7 @@
       </div>
 
       <!-- ============ Phase 2 ============ -->
-      <div class="phase">
+      <div id="phase2" class="phase">
         <div class="phase-dot"></div>
         <div class="phase-label">Phase 2</div>
         <h2>AI 도구 숙달</h2>
@@ -1564,7 +1630,7 @@
       </div>
 
       <!-- ============ Phase 3 ============ -->
-      <div class="phase">
+      <div id="phase3" class="phase">
         <div class="phase-dot"></div>
         <div class="phase-label">Phase 3</div>
         <h2>실전 프로젝트</h2>
@@ -1752,7 +1818,7 @@
       </div>
 
       <!-- ============ Phase 4 ============ -->
-      <div class="phase">
+      <div id="phase4" class="phase">
         <div class="phase-dot"></div>
         <div class="phase-label">Phase 4</div>
         <h2>사업 적용</h2>
@@ -1866,6 +1932,57 @@
       Made with AI · <a href="https://github.com/pjm3863966/vibe-coding-guide" target="_blank" rel="noopener">GitHub</a>
     </div>
   </footer>
+
+  <!-- TOC Side Navigation -->
+  <nav class="toc-nav" id="toc">
+    <a href="#intro"><span class="toc-dot"></span>바이브 코딩이란</a>
+    <a href="#ai-learning"><span class="toc-dot"></span>AI 학습법</a>
+    <a href="#overview"><span class="toc-dot"></span>전체 흐름</a>
+    <a href="#phase1" data-phase="1"><span class="toc-dot"></span>Phase 1 · 기초</a>
+    <a href="#phase2" data-phase="2"><span class="toc-dot"></span>Phase 2 · AI 도구</a>
+    <a href="#phase3" data-phase="3"><span class="toc-dot"></span>Phase 3 · 프로젝트</a>
+    <a href="#phase4" data-phase="4"><span class="toc-dot"></span>Phase 4 · 사업</a>
+  </nav>
+
+  <script>
+    // Scroll Spy
+    const tocLinks = document.querySelectorAll('.toc-nav a');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return document.getElementById(id);
+    }).filter(Boolean);
+
+    function updateToc() {
+      const scrollY = window.scrollY + window.innerHeight / 3;
+      let current = null;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].offsetTop <= scrollY) {
+          current = sections[i].id;
+          break;
+        }
+      }
+
+      tocLinks.forEach(link => {
+        const href = link.getAttribute('href').slice(1);
+        link.classList.toggle('active', href === current);
+      });
+    }
+
+    // Smooth scroll
+    tocLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    window.addEventListener('scroll', updateToc, { passive: true });
+    updateToc();
+  </script>
 
 </body>
 </html>
